@@ -1,13 +1,23 @@
-.container {
-  display: flex;
-  background-color: red;
+/* .contenedor-main { */
+  /* display: flex; */
+  /* background-color: red;
   width: 100%;
-  height: 300px;
-  overflow-x: scroll;
+  height: 300px; */
+  /* overflow-x: scroll; */
 
-  .img {
+  /* .img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  } */
+
+
+.contenedor-imgs {
+  width: 768px;
+  display: flex;
+  overflow-x: scroll;
+  
+  .img {
+    width: 100%;
   }
 }
