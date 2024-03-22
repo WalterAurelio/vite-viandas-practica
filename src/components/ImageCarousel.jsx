@@ -5,23 +5,16 @@ import { imagenes } from "../auxObject/imagenes";
 import Imagen from "./Imagen";
 
 function ImageCarousel() {
-  const [indexActual, setIndexActual] = useState(0);
   const ref = useRef(null);
+  let containerWidth = 0;
+  let indexActual = 0;
   let aux = 0;
 
-  /* useEffect(() => {
-    const intervalId = setInterval(() => {
-      setIndexActual(prevValue => (prevValue + 1) % 3);
-    }, 2000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }); */
-
   useEffect(() => {
+    containerWidth = ref.current.clientWidth;
     const intervalId = setInterval(() => {
-      aux = (aux + 768) % (768 * imagenes.length);
+      indexActual = (indexActual + 1) % imagenes.length;
+      aux = (containerWidth * indexActual) % (containerWidth * imagenes.length);
       ref.current.scrollTo({
         left: aux,
         behavior: 'smooth'
@@ -31,22 +24,30 @@ function ImageCarousel() {
     return () => {
       clearInterval(intervalId);
     }
-  });
+  }, []);
 
-  /* function handleClick(num) {
-    if (indexActual + num < imagenes.length && indexActual + num > - 1) {
-      setIndexActual(prevValue => prevValue + num);
-      console.log(indexActual + num);
+  useEffect(() => {
+    containerWidth = ref.current.clientWidth;
+    function hola() {
+      containerWidth = ref.current.clientWidth;
+      ref.current.scrollTo({
+        left: indexActual * containerWidth
+      });
     }
-  } */
+    window.addEventListener('resize', hola);
+
+    return () => {
+      window.removeEventListener('resize', hola);
+    }
+  }, []);
 
   function handleClick(num) {
-    aux = aux === 0 && num === -1 ? 768 * (imagenes.length - 1) : (aux + 768 * num) % (768 * imagenes.length);
+    indexActual = indexActual + num === -1 ? imagenes.length - 1 : (indexActual + num) % imagenes.length;
+    aux = aux === 0 && num === -1 ? containerWidth * (imagenes.length - 1) : containerWidth * indexActual;
     ref.current.scrollTo({
       left: aux,
       behavior: 'smooth'
     });
-    console.log(aux);
   }
 
   return (
@@ -59,7 +60,6 @@ function ImageCarousel() {
                 key={index}
                 img={img}
                 index={index}
-                isActive={indexActual === index}
               />
             )
           }
