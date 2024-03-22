@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import './styles/imageCarousel.scss';
-import { IndexContext } from '../contexts/IndexContext';
 import { imagenes } from "../auxObject/imagenes";
 import Imagen from "./Imagen";
 
@@ -43,7 +42,7 @@ function ImageCarousel() {
 
   function handleClick(num) {
     indexActual = indexActual + num === -1 ? imagenes.length - 1 : (indexActual + num) % imagenes.length;
-    aux = aux === 0 && num === -1 ? containerWidth * (imagenes.length - 1) : containerWidth * indexActual;
+    aux = aux + num === -1 ? containerWidth * (imagenes.length - 1) : containerWidth * indexActual;
     ref.current.scrollTo({
       left: aux,
       behavior: 'smooth'
@@ -51,38 +50,36 @@ function ImageCarousel() {
   }
 
   return (
-    <IndexContext.Provider value={indexActual}>
-      <div className='contenedor-main'>
-        <div ref={ref} className='contenedor-imgs'>
-          {
-            imagenes.map((img, index) =>
-              <Imagen
-                key={index}
-                img={img}
-                index={index}
-              />
-            )
-          }
-        </div>
-
-        <button
-          type='button'
-          onClick={() => {
-            handleClick(-1);
-          }}
-        >
-          Izquierda
-        </button>
-        <button
-          type='button'
-          onClick={() => {
-            handleClick(1);
-          }}
-        >
-          Derecha
-        </button>
+    <div className='contenedor-main'>
+      <div ref={ref} className='contenedor-imgs'>
+        {
+          imagenes.map((img, index) =>
+            <Imagen
+              key={index}
+              img={img}
+              index={index}
+            />
+          )
+        }
       </div>
-    </IndexContext.Provider>
+
+      <button
+        type='button'
+        onClick={() => {
+          handleClick(-1);
+        }}
+      >
+        Izquierda
+      </button>
+      <button
+        type='button'
+        onClick={() => {
+          handleClick(1);
+        }}
+      >
+        Derecha
+      </button>
+    </div>
   );
 }
 

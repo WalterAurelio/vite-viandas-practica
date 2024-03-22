@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import SearchBar from './components/SearchBar';
 import ImageCarousel from './components/ImageCarousel';
+import PlatoCard from './components/PlatoCard';
 
 function App() {
 
@@ -14,9 +15,11 @@ function App() {
         <Navbar />
       </header>
 
-      <section className='presentacion'>
+      {/* <section className='presentacion'>
         <ImageCarousel />
-      </section>
+      </section> */}
+
+      <PlatoCard />
     </>
   );
 }
