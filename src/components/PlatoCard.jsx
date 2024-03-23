@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import burguerPic from '../assets/burguer-fp.png';
 
-function PlatoCard() {
+function PlatoCard({ plato }) {
   const [cantidad, setCantidad] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
 
