@@ -1,34 +1,33 @@
-import React, { useState } from "react";
-import burguerPic from '../assets/burguer-fp.png';
+import React, { useState, useContext } from "react";
+import { CarritoContext } from "../contexts/CarritoContext";
+
+let ARPesos = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD'
+})
 
 function PlatoCard({ plato }) {
   const [cantidad, setCantidad] = useState(1);
-  const [isAdded, setIsAdded] = useState(false);
+  const { agregarACarrito } = useContext(CarritoContext);
 
   const handleClick = (num) => {
-    setCantidad(prevValue => prevValue + num > 0 ? prevValue + num : prevValue);
-  }
-
-  const addToCart = () => {
-    setIsAdded(true);
-  }
-
-  const removeFromCart = () => {
-    setIsAdded(false);
+    if (cantidad + num > 0) {
+      setCantidad(prevCantidad => prevCantidad + num);
+    }
   }
 
   return (
     <article>
       <div>
         <img
-          src={burguerPic}
+          src={plato.image}
           className=""
           alt="img_plato"
         />
-        <p>$10.000</p>
-        <p>Nombre del plato</p>
+        <p>{ARPesos.format(plato.price)}</p>
+        <p>{plato.name}</p>
       </div>
-      <p>Descripción del plato</p>
+      <p>{plato.description}</p>
       <label
         htmlFor="cantidad"
       >
@@ -40,6 +39,8 @@ function PlatoCard({ plato }) {
         type="number"
         placeholder="Cantidad"
         value={cantidad}
+        /* onChange={(e) => { setCantidad(Number(e.target.value)) }} */
+        readOnly
       />
       <button
         type="button"
@@ -54,19 +55,23 @@ function PlatoCard({ plato }) {
         +
       </button>
       <button
+        disabled={cantidad < 1}
         type="button"
-        onClick={() => { addToCart() }}
+        onClick={() => { agregarACarrito(plato, cantidad) }}
       >
         Añadir al pedido
       </button>
-      {
+      {/* {
         isAdded && <button
           type="button"
-          onClick={() => { removeFromCart() }}
+          onClick={() => {
+            eliminarDeCarrito(plato)
+            setIsAdded(false);
+          }}
         >
           Quitar del pedido
         </button>
-      }
+      } */}
     </article>
   );
 }

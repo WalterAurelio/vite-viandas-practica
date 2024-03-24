@@ -1,0 +1,32 @@
+{
+  "platos": [
+    {
+      "id": 0,
+      "name": "Hamburguesa",
+      "price": 10000,
+      "description": "Hamburguesa con lechuga y tomate.",
+      "image": "src/assets/burguer-fp.png"
+    },
+    {
+      "id": 1,
+      "name": "Pancho",
+      "price": 5000,
+      "description": "Pancho con papas pay y salsa.",
+      "image": "src/assets/burguer-fp.png"
+    },
+    {
+      "id": 2,
+      "name": "Fideos",
+      "price": 7000,
+      "description": "Fideos con salsa de tomate.",
+      "image": "src/assets/burguer-fp.png"
+    },
+    {
+      "id": 3,
+      "name": "Pescado",
+      "price": 2000,
+      "description": "Pescado con arroz, papa y ensalada de lechuga.",
+      "image": "src/assets/burguer-fp.png"
+    }
+  ]
+}

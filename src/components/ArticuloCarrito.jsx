@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import burguerPic from "../assets/burguer-fp.png";
 import "./styles/articuloCarrito.scss";
+import { CarritoContext } from "../contexts/CarritoContext";
 
-function ArticuloCarrito() {
+function ArticuloCarrito({ articulo }) {
+  const { eliminarDeCarrito } = useContext(CarritoContext);
+
   return (
     <div className="articulo-carrito">
-      <img src={burguerPic} alt="img_compra" width={150} />
+      <img className="image" src={articulo.image} alt="img_compra" height={150} />
       <div className="info-pedido">
-        <p>Nombre del plato</p>
+        <p>{articulo.name}</p>
         <p>Cantidad</p>
-        <p>$10.000</p>
+        <p>{articulo.price}</p>
+        <button type="button"
+          onClick={() => { eliminarDeCarrito(articulo) }}
+        >
+          X
+        </button>
       </div>
     </div>
   );

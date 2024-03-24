@@ -6,11 +6,18 @@ function Carrito({ listaArticulos }) {
 
   return (
     <details className="details">
-      <summary onClick={() => { handleClick() }}>
+      <summary onClick={() => { }}>
         Carrito
       </summary>
       <div className="contenido-carrito">
-        <ArticuloCarrito />
+        {
+          listaArticulos.map((articulo, index) =>
+            <ArticuloCarrito
+              key={index}
+              articulo={articulo}
+            />
+          )
+        }
       </div>
     </details>
   );

@@ -1,11 +1,12 @@
 import React from "react";
 import PlatoCard from "./PlatoCard";
+import './styles/listaPlatos.scss';
 
-function ListaPlatos({ ListaPlatos }) {
+function ListaPlatos({ listaPlatos }) {
   return (
-    <div>
+    <div className="contenedor-cards">
       {
-        ListaPlatos.map((plato, index) =>
+        listaPlatos.map((plato, index) =>
           <PlatoCard
             key={index}
             plato={plato}

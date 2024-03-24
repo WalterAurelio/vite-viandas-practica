@@ -4,7 +4,11 @@
   }
 
   .contenido-carrito {
+    background-color: rgba(0 0 0 / 50%);
     position: fixed;
     right: 0;
+    top: 0;
+    max-height: 525px;
+    overflow-y: scroll;
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchBar() {
+function SearchBar({ filtrarPlatos }) {
   return (
     <>
       <input
@@ -8,6 +8,9 @@ function SearchBar() {
         placeholder='Buscar productos'
         id='search'
         name='search'
+        onChange={(e) => {
+          filtrarPlatos(e.target.value.toLowerCase());
+        }}
       />
       <button type='submit'>
         Buscar
