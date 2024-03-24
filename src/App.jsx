@@ -8,6 +8,7 @@ import Carrito from './components/Carrito';
 import ListaPlatos from './components/ListaPlatos';
 import platosJson from "./auxObject/platos.json";
 import { CarritoContext } from './contexts/CarritoContext';
+import { EntradaContext } from './contexts/EntradaContext';
 import { v4 as uuidv4 } from 'uuid';
 
 let listaPlatos = platosJson.platos;
@@ -15,17 +16,17 @@ let listaPlatos = platosJson.platos;
 function App() {
   const [platos, setPlatos] = useState(listaPlatos);
   const [listaCarrito, setListaCarrito] = useState([]);
+  const [entrada, setEntrada] = useState('');
 
-  function filtrarPlatos(input) {
+  /* function filtrarPlatos(input) {
     let listaActualizada = listaPlatos;
     if (input.trimEnd() !== '') {
       listaActualizada = listaActualizada.filter(item =>
         item.name.toLowerCase().includes(input) || item.description.toLowerCase().includes(input)
       );
     }
-    console.log(listaActualizada);
     setPlatos(listaActualizada);
-  }
+  } */
 
   function agregarACarrito(articulo, cantidad) {
     let listaActualizada = listaCarrito;
@@ -46,20 +47,22 @@ function App() {
 
   return (
     <CarritoContext.Provider value={{ agregarACarrito, eliminarDeCarrito }}>
-      <header className='navegacion-principal'>
-        <h1>Viandas Viking</h1>
-        <SearchBar filtrarPlatos={filtrarPlatos} />
-        <Navbar />
-        <Carrito listaArticulos={listaCarrito} />
-      </header>
+      <EntradaContext.Provider value={entrada}>
+        <header className='navegacion-principal'>
+          <h1>Viandas Viking</h1>
+          <SearchBar filtrarPlatos={setEntrada} />
+          <Navbar />
+          <Carrito listaArticulos={listaCarrito} />
+        </header>
 
-      {/* <section className='presentacion'>
-        <ImageCarousel />
-      </section> */}
+        {/* <section className='presentacion'>
+          <ImageCarousel />
+        </section> */}
 
-      <main>
-        <ListaPlatos listaPlatos={platos} />
-      </main>
+        <main>
+          <ListaPlatos listaPlatos={platos} />
+        </main>
+      </EntradaContext.Provider>
     </CarritoContext.Provider>
   );
 }

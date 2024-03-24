@@ -3,6 +3,7 @@ import PlatoCard from "./PlatoCard";
 import './styles/listaPlatos.scss';
 
 function ListaPlatos({ listaPlatos }) {
+
   return (
     <div className="contenedor-cards">
       {

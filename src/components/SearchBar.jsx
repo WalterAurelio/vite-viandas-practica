@@ -9,7 +9,7 @@ function SearchBar({ filtrarPlatos }) {
         id='search'
         name='search'
         onChange={(e) => {
-          filtrarPlatos(e.target.value.toLowerCase());
+          filtrarPlatos(e.target.value.trim().toLowerCase());
         }}
       />
       <button type='submit'>

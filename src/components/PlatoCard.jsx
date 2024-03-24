@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContext";
+import { EntradaContext } from "../contexts/EntradaContext";
+import './styles/platoCard.scss';
 
 let ARPesos = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -9,6 +11,8 @@ let ARPesos = new Intl.NumberFormat('en-US', {
 function PlatoCard({ plato }) {
   const [cantidad, setCantidad] = useState(1);
   const { agregarACarrito } = useContext(CarritoContext);
+  const entrada = useContext(EntradaContext);
+  const isHidden = !(plato.name.toLowerCase().includes(entrada) || plato.description.toLowerCase().includes(entrada));
 
   const handleClick = (num) => {
     if (cantidad + num > 0) {
@@ -17,7 +21,7 @@ function PlatoCard({ plato }) {
   }
 
   return (
-    <article>
+    <article className={isHidden ? `oculto` : ''}>
       <div>
         <img
           src={plato.image}
