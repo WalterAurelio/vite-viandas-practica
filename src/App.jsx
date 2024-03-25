@@ -16,7 +16,7 @@ let listaPlatos = platosJson.platos;
 function App() {
   const [platos, setPlatos] = useState(listaPlatos);
   const [listaCarrito, setListaCarrito] = useState([]);
-  const [entrada, setEntrada] = useState('');
+  const [entrada, setEntrada] = useState([]);
 
   /* function filtrarPlatos(input) {
     let listaActualizada = listaPlatos;

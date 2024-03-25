@@ -12,7 +12,9 @@ function PlatoCard({ plato }) {
   const [cantidad, setCantidad] = useState(1);
   const { agregarACarrito } = useContext(CarritoContext);
   const entrada = useContext(EntradaContext);
-  const isHidden = !(plato.name.toLowerCase().includes(entrada) || plato.description.toLowerCase().includes(entrada));
+  let isHidden = !(entrada.every(item => {
+    return plato.name.toLowerCase().includes(item) || plato.description.toLowerCase().includes(item);
+  }));
 
   const handleClick = (num) => {
     if (cantidad + num > 0) {
@@ -21,7 +23,8 @@ function PlatoCard({ plato }) {
   }
 
   return (
-    <article className={isHidden ? `oculto` : ''}>
+    !isHidden &&
+    <article>
       <div>
         <img
           src={plato.image}
