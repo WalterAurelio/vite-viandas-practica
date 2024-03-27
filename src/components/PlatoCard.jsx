@@ -30,38 +30,42 @@ function PlatoCard({ plato }) {
       </div>
       <p className="plato-nombre">{plato.name}</p>
       <p className="plato-descripcion">{plato.description}</p>
-      <label
-        htmlFor="cantidad"
-      >
-        Ingrese la cantidad deseada:
+      <label className="label" htmlFor="cantidad">
+        Ingrese la cantidad deseada
       </label>
-      <input
-        id="cantidad"
-        name="cantidad"
-        type="number"
-        placeholder="Cantidad"
-        value={cantidad}
-        /* onChange={(e) => { setCantidad(Number(e.target.value)) }} */
-        readOnly
-      />
+      <div className="container-input-botones">
+        <button
+          className="boton menos"
+          type="button"
+          onClick={() => { handleClick(-1) }}
+        >
+          -
+        </button>
+        <input
+          className="input-cantidad"
+          id="cantidad"
+          name="cantidad"
+          type="number"
+          placeholder="Cantidad"
+          value={cantidad}
+          /* onChange={(e) => { setCantidad(Number(e.target.value)) }} */
+          readOnly
+        />
+        <button
+          className="boton mas"
+          type="button"
+          onClick={() => { handleClick(1) }}
+        >
+          +
+        </button>
+      </div>
       <button
-        type="button"
-        onClick={() => { handleClick(-1) }}
-      >
-        -
-      </button>
-      <button
-        type="button"
-        onClick={() => { handleClick(1) }}
-      >
-        +
-      </button>
-      <button
+        className="boton-anadir"
         disabled={cantidad < 1}
         type="button"
         onClick={() => { agregarACarrito(plato, cantidad) }}
       >
-        Añadir al pedido
+        Agregar al pedido
       </button>
       {/* {
         isAdded && <button
