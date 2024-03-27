@@ -1,0 +1,38 @@
+.plato-card {
+  max-width: 480px;
+  background-color: aquamarine;
+  border-radius: .4rem;
+  padding: 10px;
+  margin: 0 auto;
+
+  .container-img-precio {
+    width: 100%;
+    position: relative;
+    
+    img {
+      width: 100%;
+      border-radius: .4rem;
+    }
+
+    .plato-precio {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      background-color: antiquewhite;
+      padding: .75rem;
+      border-radius: .4rem;
+      font-weight: 700;
+    }
+  }
+
+  .plato-nombre {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 2rem 0;
+  }
+
+  .plato-descripcion {
+
+  }
+
+}

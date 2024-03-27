@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-import burguerPic from "../assets/burguer-fp.png";
-import "./styles/articuloCarrito.scss";
 import { CarritoContext } from "../contexts/CarritoContext";
 
 function ArticuloCarrito({ articulo }) {

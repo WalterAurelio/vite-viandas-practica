@@ -1,6 +1,5 @@
 import React from "react";
 import PlatoCard from "./PlatoCard";
-import './styles/listaPlatos.scss';
 
 function ListaPlatos({ listaPlatos }) {
 

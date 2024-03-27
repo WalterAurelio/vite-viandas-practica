@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import './styles/imageCarousel.scss';
 import { imagenes } from "../auxObject/imagenes";
 import Imagen from "./Imagen";
 

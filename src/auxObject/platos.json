@@ -2,31 +2,45 @@
   "platos": [
     {
       "id": 0,
-      "name": "Hamburguesa MaxiBOOM",
+      "name": "Hamburguesa Gourmet Suprema",
       "price": 10000,
-      "description": "Hamburguesa con lechuga y tomate.",
-      "image": "src/assets/burguer-fp.png"
+      "description": "La Hamburguesa Gourmet ofrece una combinación perfecta de sabores intensos y texturas irresistibles. Con carne de res premium, queso cheddar, tocino crujiente y vegetales frescos. ¡Una experiencia inolvidable entre dos panes!",
+      "image": "src/assets/burguer-1.png"
     },
     {
       "id": 1,
-      "name": "Super Pancho",
+      "name": "Hotdog Deluxe",
       "price": 5000,
-      "description": "Pancho con papas pay y salsa.",
-      "image": "src/assets/burguer-fp.png"
+      "description": "Nuestro Hotdog de Lujo ofrece una experiencia clásica reinventada. Con una salchicha premium, pan tierno y una selección de toppings irresistibles, cada bocado es una explosión de sabor y textura.",
+      "image": "src/assets/hotdog-1.jpg"
     },
     {
       "id": 2,
-      "name": "Fideos Gros",
+      "name": "Pasta Pomodoro",
       "price": 7000,
-      "description": "Fideos con salsa de tomate.",
-      "image": "src/assets/burguer-fp.png"
+      "description": "Sumérgete en la calidez de nuestro clásico plato de Pastas con Salsa de Tomate. Ofrece la perfecta combinación de pasta al dente y salsa casera de tomate, con hierbas frescas y ajo. Una experiencia italiana clásica en cada bocado.",
+      "image": "src/assets/pasta-1.jpg"
     },
     {
       "id": 3,
-      "name": "Pescado Le poisson",
+      "name": "Plato de Filete Mediterráneo",
       "price": 2000,
-      "description": "Pescado con arroz, papa y ensalada de lechuga.",
-      "image": "src/assets/burguer-fp.png"
+      "description": "Nuestro Plato de Pescado al Limón combina filete de pescado fresco con papas doradas, cebollas caramelizadas, pepino y lechuga, todo resaltado con un toque de limón. Una explosión de frescura un bocado a la vez.",
+      "image": "src/assets/fish-1.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Pollo Primavera",
+      "price": 2000,
+      "description": "Disfruta de nuestro Pollo con Ensalada Fresca y Limón. Jugosos filetes de pollo marinados en especias y cocinados a la perfección, servidos con una ensalada de lechuga y tomate fresca. Acompañado de rodajas de limón para un toque refrescante. Una opción ligera y deliciosa para satisfacer tu paladar.",
+      "image": "src/assets/chicken-1.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Pizza Calabresa Suprema",
+      "price": 2000,
+      "description": "Nuestra pizza Calabresa Mediterránea combina la robustez de la calabresa con la frescura de las aceitunas negras y la dulzura del morrón. Esta combinación perfecta de ingredientes te hará volver por más.",
+      "image": "src/assets/pizza-1.jpg"
     }
   ]
 }

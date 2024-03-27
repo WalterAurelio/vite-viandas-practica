@@ -1,0 +1,9 @@
+.contenedor-imgs {
+  max-width: 768px;
+  display: flex;
+  overflow-x: scroll;
+  
+  .img {
+    width: 100%;
+  }
+}

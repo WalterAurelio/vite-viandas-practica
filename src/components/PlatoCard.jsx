@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContext";
 import { EntradaContext } from "../contexts/EntradaContext";
-import './styles/platoCard.scss';
 
 let ARPesos = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -24,17 +23,13 @@ function PlatoCard({ plato }) {
 
   return (
     !isHidden &&
-    <article>
-      <div>
-        <img
-          src={plato.image}
-          className=""
-          alt="img_plato"
-        />
-        <p>{ARPesos.format(plato.price)}</p>
-        <p>{plato.name}</p>
+    <article className="plato-card">
+      <div className="container-img-precio">
+        <img src={plato.image} alt="img_plato" />
+        <p className="plato-precio">{ARPesos.format(plato.price)}</p>
       </div>
-      <p>{plato.description}</p>
+      <p className="plato-nombre">{plato.name}</p>
+      <p className="plato-descripcion">{plato.description}</p>
       <label
         htmlFor="cantidad"
       >
