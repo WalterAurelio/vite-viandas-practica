@@ -1,3 +1,46 @@
 .articulo-carrito {
   display: flex;
+  border-bottom: solid;
+  border-width: 1px;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+
+  .image {
+    border-radius: 4px;
+  }
+
+  .info-pedido {
+    width: 100%;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .cantidad-pedido,
+    .subtotal-pedido {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .cantidad-pedido {
+      margin-bottom: 1.5rem;
+    }
+
+    .subtotal-pedido {
+      border-top: solid;
+      border-width: 1px;
+      padding-top: .5rem;
+    }
+
+    .boton-eliminar {
+      border: none;
+      padding: .5rem;
+      text-transform: uppercase;
+      letter-spacing: $letterSpacing;
+      border-radius: .4rem;
+      background-color: bisque;
+      cursor: pointer;
+    }
+  }
+
 }

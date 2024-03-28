@@ -7,6 +7,7 @@ import platosJson from "./auxObject/platos.json";
 import { CarritoContext } from './contexts/CarritoContext';
 import { EntradaContext } from './contexts/EntradaContext';
 import { v4 as uuidv4 } from 'uuid';
+import ArticuloCarrito from './components/ArticuloCarrito';
 
 let listaPlatos = platosJson.platos;
 
@@ -15,16 +16,7 @@ function App() {
   const [listaCarrito, setListaCarrito] = useState([]);
   const [entrada, setEntrada] = useState([]);
   const [isActive, setIsActive] = useState(false);
-
-  /* function filtrarPlatos(input) {
-    let listaActualizada = listaPlatos;
-    if (input.trimEnd() !== '') {
-      listaActualizada = listaActualizada.filter(item =>
-        item.name.toLowerCase().includes(input) || item.description.toLowerCase().includes(input)
-      );
-    }
-    setPlatos(listaActualizada);
-  } */
+  const [carritoActive, setCarritoActive] = useState(false);
 
   function agregarACarrito(articulo, cantidad) {
     let listaActualizada = listaCarrito;
@@ -54,26 +46,46 @@ function App() {
             <div className="bar"></div>
           </button>
           <nav className={`nav-mobile ${isActive ? 'is-active' : ''}`}>
+            <a href="#">Inicio</a>
             <a href="#">Categorías</a>
-            <a href="#">Ofertas</a>
-            <a href="#">Para 4 personas</a>
+            <a href="#">Promos</a>
             <a href="#">Contacto</a>
           </nav>
 
-          <h1 className='logo'>Logo</h1>
-
-          <SearchBar filtrarPlatos={setEntrada} />
-
-          <div className='nav-container'>
-            <nav className='nav-bar'>
-              <a href="#">Categorías</a>
-              <a href="#">Ofertas</a>
-              <a href="#">Para 4 personas</a>
-              <a href="#">Contacto</a>
-            </nav>
+          <button className={`boton-carrito`}
+            onClick={() => { setCarritoActive(!carritoActive) }}
+          >
+            O
+          </button>
+          <div className={`carrito ${carritoActive ? 'is-active' : ''} ${listaCarrito.length < 1 ? 'vacio' : ''}`}>
+            {
+              (listaCarrito.length < 1) &&
+              <p className='mensaje-vacio'>El carrito se encuentra vacío.</p>
+            }
+            {
+              listaCarrito.map((articulo, index) =>
+                <ArticuloCarrito
+                  key={index}
+                  articulo={articulo}
+                />
+              )
+            }
           </div>
 
-          <Carrito listaArticulos={listaCarrito} />
+          {/* <h1 className='logo'>Logo</h1> */}
+
+          {/* <SearchBar filtrarPlatos={setEntrada} /> */}
+
+          {/* <div className='nav-container'>
+            <nav className='nav-bar'>
+              <a href="#">Inicio</a>
+              <a href="#">Categorías</a>
+              <a href="#">Promos</a>
+              <a href="#">Contacto</a>
+            </nav>
+          </div> */}
+
+          {/* <Carrito listaArticulos={listaCarrito} /> */}
 
         </header>
 

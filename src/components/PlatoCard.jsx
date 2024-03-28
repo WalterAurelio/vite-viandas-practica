@@ -5,7 +5,7 @@ import { EntradaContext } from "../contexts/EntradaContext";
 let ARPesos = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD'
-})
+});
 
 function PlatoCard({ plato }) {
   const [cantidad, setCantidad] = useState(1);
