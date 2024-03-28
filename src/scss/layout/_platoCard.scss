@@ -4,6 +4,8 @@
   border-radius: .4rem;
   padding: 10px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 
   .container-img-precio {
     width: 100%;
@@ -28,12 +30,14 @@
   .plato-nombre {
     font-weight: 700;
     font-size: $mainSize;
-    margin: 2rem 0;
+    margin: 1rem 0;
+    height: 7rem;
   }
 
   .plato-descripcion {
-    font-size: $secondSize;
+    font-size: $secondSize * .9;
     margin-bottom: 2rem;
+    line-height: 1.5;
   }
 
   .label {
@@ -41,6 +45,8 @@
     text-align: center;
     margin-bottom: .7rem;
     text-transform: uppercase;
+    margin-top: auto;
+    letter-spacing: .5rem;
   }
 
   .boton-anadir {
@@ -49,6 +55,11 @@
     width: 100%;
     text-transform: uppercase;
     border-radius: 4px;
+    letter-spacing: .4rem;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -74,6 +85,6 @@
 
   .input-cantidad {
     width: 7rem;
-    text-align: right;
+    text-align: center;
   }
 }

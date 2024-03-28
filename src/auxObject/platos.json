@@ -2,7 +2,7 @@
   "platos": [
     {
       "id": 0,
-      "name": "Hamburguesa Gourmet Suprema",
+      "name": "Hamburguesa Gourmet",
       "price": 10000,
       "description": "La Hamburguesa Gourmet ofrece una combinación perfecta de sabores intensos y texturas irresistibles. Con carne de res premium, queso cheddar, tocino crujiente y vegetales frescos. ¡Una experiencia inolvidable entre dos panes!",
       "image": "src/assets/burguer-1.png"
@@ -37,7 +37,7 @@
     },
     {
       "id": 5,
-      "name": "Pizza Calabresa Suprema",
+      "name": "Pizza Calabresa",
       "price": 2000,
       "description": "Nuestra pizza Calabresa Mediterránea combina la robustez de la calabresa con la frescura de las aceitunas negras y la dulzura del morrón. Esta combinación perfecta de ingredientes te hará volver por más.",
       "image": "src/assets/pizza-1.jpg"

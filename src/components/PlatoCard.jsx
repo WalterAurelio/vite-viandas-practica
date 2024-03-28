@@ -31,7 +31,7 @@ function PlatoCard({ plato }) {
       <p className="plato-nombre">{plato.name}</p>
       <p className="plato-descripcion">{plato.description}</p>
       <label className="label" htmlFor="cantidad">
-        Ingrese la cantidad deseada
+        Cantidad
       </label>
       <div className="container-input-botones">
         <button

@@ -1,9 +1,6 @@
 import { useState, useContext } from 'react';
-import './App.css';
-import Navbar from './components/Navbar';
 import SearchBar from './components/SearchBar';
 import ImageCarousel from './components/ImageCarousel';
-import PlatoCard from './components/PlatoCard';
 import Carrito from './components/Carrito';
 import ListaPlatos from './components/ListaPlatos';
 import platosJson from "./auxObject/platos.json";
@@ -17,6 +14,7 @@ function App() {
   const [platos, setPlatos] = useState(listaPlatos);
   const [listaCarrito, setListaCarrito] = useState([]);
   const [entrada, setEntrada] = useState([]);
+  const [isActive, setIsActive] = useState(false);
 
   /* function filtrarPlatos(input) {
     let listaActualizada = listaPlatos;
@@ -48,12 +46,38 @@ function App() {
   return (
     <CarritoContext.Provider value={{ agregarACarrito, eliminarDeCarrito }}>
       <EntradaContext.Provider value={entrada}>
-        <header className='navegacion-principal'>
-          <h1>Viandas Viking</h1>
+        <header className='header'>
+
+          <button className={`hamburger ${isActive ? 'is-active' : ''}`.trimEnd()}
+            onClick={() => { setIsActive(!isActive) }}
+          >
+            <div className="bar"></div>
+          </button>
+          <nav className={`nav-mobile ${isActive ? 'is-active' : ''}`}>
+            <a href="#">Categorías</a>
+            <a href="#">Ofertas</a>
+            <a href="#">Para 4 personas</a>
+            <a href="#">Contacto</a>
+          </nav>
+
+          <h1 className='logo'>Logo</h1>
+
           <SearchBar filtrarPlatos={setEntrada} />
-          <Navbar />
+
+          <div className='nav-container'>
+            <nav className='nav-bar'>
+              <a href="#">Categorías</a>
+              <a href="#">Ofertas</a>
+              <a href="#">Para 4 personas</a>
+              <a href="#">Contacto</a>
+            </nav>
+          </div>
+
           <Carrito listaArticulos={listaCarrito} />
+
         </header>
+
+
 
         {/* <section className='presentacion'>
           <ImageCarousel />
