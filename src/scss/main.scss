@@ -6,8 +6,10 @@
 @import "base/globales";
 
 @import "layout/app";
-@import "layout/articuloCarrito";
-@import "layout/carrito";
-@import "layout/imagenCarousel";
-@import "layout/listaPlatos";
-@import "layout/platoCard";
+@import "components/ArticuloCarrito";
+@import "components/Carrito";
+@import "components/HamburguerMenu";
+@import "components/ImagenCarousel";
+@import "components/ListaPlatos";
+@import "components/PlatoCard";
+@import "components/SearchBar"

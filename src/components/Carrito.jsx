@@ -1,24 +1,40 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import ArticuloCarrito from "./ArticuloCarrito";
 
-function Carrito({ listaArticulos }) {
+function Carrito({ listaCarrito }) {
+  const [isActive, setIsActive] = useState(false);
+  const carritoVacio = listaCarrito.length < 1;
+  const ref = useRef(null);
 
   return (
-    <details className="details">
-      <summary onClick={() => { }}>
+    <>
+      <button
+        className='boton-carrito'
+        onClick={() => { setIsActive(!isActive) }}
+      >
         Carrito
-      </summary>
-      <div className="contenido-carrito">
+      </button>
+      <div className={`carrito ${isActive ? 'is-active' : ''} ${carritoVacio ? 'vacio' : ''}`.trimEnd()}>
         {
-          listaArticulos.map((articulo, index) =>
-            <ArticuloCarrito
-              key={index}
-              articulo={articulo}
-            />
-          )
+          carritoVacio &&
+          <p className="mensaje vacio">El carrito se encuentra vacío.</p>
         }
+        <div>
+          {
+            listaCarrito.map((articulo, index) =>
+              <ArticuloCarrito
+                key={index}
+                articulo={articulo}
+              />
+            )
+          }
+        </div>
+        <div className={`container-total ${isActive ? 'is-active' : ''}`}>
+          <p>Total: </p>
+          <p>$20,000.00</p>
+        </div>
       </div>
-    </details>
+    </>
   );
 }
 

@@ -1,0 +1,41 @@
+.container-searchbar {
+  display: flex;
+
+  .input,
+  .button {
+    border: none;
+    background-color: red;
+  }
+
+  .input {
+    border-radius: 2rem 0 0 2rem;
+    padding-left: 2rem;
+    outline: none;
+  }
+
+  .button {
+    border-radius: 0 2rem 2rem 0;
+    padding-right: 2rem;
+  }
+
+  // Código para remover la X del input
+
+  .input::-ms-clear {
+    display: none;
+    width : 0;
+    height: 0;
+  }
+
+  .input::-ms-reveal {
+    display: none;
+    width : 0;
+    height: 0;
+  }
+
+  .input::-webkit-search-decoration,
+  .input::-webkit-search-cancel-button,
+  .input::-webkit-search-results-button,
+  .input::-webkit-search-results-decoration {
+    display: none;
+  }
+}

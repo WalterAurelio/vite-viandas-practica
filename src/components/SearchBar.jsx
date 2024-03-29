@@ -2,8 +2,9 @@ import React from "react";
 
 function SearchBar({ filtrarPlatos }) {
   return (
-    <>
+    <div className="container-searchbar">
       <input
+        className="input"
         type='search'
         placeholder='Buscar productos'
         id='search'
@@ -13,10 +14,10 @@ function SearchBar({ filtrarPlatos }) {
           console.log(e.target.value.toLowerCase().split(' '));
         }}
       />
-      <button type='submit'>
+      <button className="button" type='submit'>
         Buscar
       </button>
-    </>
+    </div>
 
   );
 }
