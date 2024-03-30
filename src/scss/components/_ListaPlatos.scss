@@ -1,8 +1,14 @@
-.contenedor-cards {
+.container-cards-2 {
   display: grid;
   grid-template-columns: 
     repeat(auto-fit, (minmax(300px, 1fr)));
   gap: 1rem;
   width: min(max(768px, 85%), 100%);
   margin: 0 auto;
+}
+
+.container-cards {
+  display: grid;
+  grid-template-columns: 
+    repeat(auto-fit, minmax(min(100%, 360px), 1fr));
 }

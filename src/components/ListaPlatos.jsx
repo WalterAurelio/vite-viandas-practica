@@ -4,7 +4,7 @@ import PlatoCard from "./PlatoCard";
 function ListaPlatos({ listaPlatos }) {
 
   return (
-    <div className="contenedor-cards">
+    <div className="container-cards">
       {
         listaPlatos.map((plato, index) =>
           <PlatoCard

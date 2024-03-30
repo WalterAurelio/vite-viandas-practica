@@ -27,15 +27,15 @@ function ArticuloCarrito({ articulo }) {
     <div className="articulo-carrito">
       <img className="image" src={articulo.image} alt="img_compra" />
       <div className="info-pedido">
-        <p><b>{articulo.name}</b></p>
+        <p className="nombre-pedido"><b>{articulo.name}</b></p>
         <p className="cantidad-pedido"><b>Cantidad</b> (1)</p>
         <p className="subtotal-pedido"><b>Subtotal</b> {ARPesos.format(articulo.price)}</p>
-        <button type="button" className="boton-eliminar"
-          onClick={() => { eliminarDeCarrito(articulo) }}
-        >
-          Eliminar
-        </button>
       </div>
+      <button type="button" className="boton-eliminar"
+        onClick={() => { eliminarDeCarrito(articulo) }}
+      >
+        Eliminar
+      </button>
     </div>
   );
 }
