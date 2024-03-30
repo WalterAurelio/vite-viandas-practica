@@ -1,19 +1,7 @@
 .header {
-  padding: 1rem;
   display: flex;
-  /* justify-content: space-between; */
-
-  .logo {
-    @media(max-width: $telefono) {
-      display: none;
-    }
-  }
 }
 
-.nav-container {
-  .nav-bar {
-    @media(max-width: $tablet) {
-      display: none;
-    }
-  }
+main {
+  padding: 0 1rem;
 }

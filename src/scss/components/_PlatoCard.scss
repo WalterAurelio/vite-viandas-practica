@@ -1,103 +1,76 @@
 .plato-card {
-
-  .container-img-precio {
-    background-color: red;
-
-    img {
-      width: 100%;
-      border-radius: 4px;
-    }
-  }
-  
-}
-
-.plato-card-2 {
-  max-width: 480px;
+  padding: 1rem;
   background-color: aquamarine;
-  border-radius: .4rem;
-  padding: 10px;
-  margin: 0 auto;
+  margin-bottom: 1rem;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
 
-  .container-img-precio {
-    width: 100%;
+  .container-img {
+    display: flex;
     position: relative;
-    
-    img {
+    margin-bottom: 1rem;
+
+    .img-plato {
       width: 100%;
-      border-radius: .4rem;
+      border-radius: 4px;
     }
 
-    .plato-precio {
+    .precio-plato {
       position: absolute;
-      bottom: 2rem;
-      left: 2rem;
       background-color: antiquewhite;
-      padding: .75rem;
-      border-radius: .4rem;
-      font-weight: 700;
+      padding: .5rem;
+      border-radius: 4px;
+      bottom: 1rem;
+      left: 1rem;
     }
   }
 
-  .plato-nombre {
-    font-weight: 700;
-    font-size: $mainSize;
-    margin: 1rem 0;
-    height: 7rem;
+  .container-infoplato {
+    margin-bottom: 1rem;
+
+    .nombre-plato {
+      font-size: $secondSize;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .descripcion-plato {
+      text-align: justify;
+    }
   }
 
-  .plato-descripcion {
-    font-size: $secondSize * .9;
-    margin-bottom: 2rem;
-    line-height: 1.5;
-  }
-
-  .label {
-    display: block;
-    text-align: center;
-    margin-bottom: .7rem;
-    text-transform: uppercase;
+  .container-input-botones {
+    display: flex;
+    flex-direction: column;
     margin-top: auto;
-    letter-spacing: $letterSpacing;
-  }
 
-  .boton-anadir {
-    border: none;
-    padding: 1rem;
-    width: 100%;
-    text-transform: uppercase;
-    border-radius: 4px;
-    letter-spacing: $letterSpacing;
+    .label {
+      display: none;
+    }
 
-    &:hover {
-      cursor: pointer;
+    .input-botones {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 1rem;
+    }
+
+    .boton-agregar {
+      height: 4rem;
     }
   }
 }
 
-.container-input-botones {
-  display: flex;
-  justify-content: space-evenly;
-  width: 60%;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-
-  .boton, 
-  .input-cantidad {
-    border: none;
-    font-family: $fuenteCantidad;
-    font-size: $mainSize;
-    height: 4rem;
-    border-radius: 4px;
-  }
-
-  .boton { 
+.input-botones {
+  .boton,
+  .input {
     width: 4rem;
+    height: 4rem;
   }
 
-  .input-cantidad {
-    width: 7rem;
-    text-align: center;
+  .input {
+    width: 6rem;
+    text-align: end;
   }
 }

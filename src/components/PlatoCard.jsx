@@ -25,30 +25,32 @@ function PlatoCard({ plato }) {
     !isHidden &&
     <article className="plato-card">
 
-      <div className="container-img-precio">
-        <img src={plato.image} alt="img_plato" />
+      <div className="container-img">
+        <img className="img-plato" src={plato.image} alt="img_plato" />
         <p className="precio-plato">{ARPesos.format(plato.price)}</p>
       </div>
 
-      <div className="container-info-plato">
-        <p className="plato-nombre">{plato.name}</p>
-        <p className="plato-descripcion">{plato.description}</p>
+      <div className="container-infoplato">
+        <p className="nombre-plato">{plato.name}</p>
+        <p className="descripcion-plato">{plato.description}</p>
       </div>
 
-      <div className="container-input">
+      <div className="container-input-botones">
+
         <label className="label" htmlFor="cantidad">
           Cantidad
         </label>
-        <div className="container-input-botones">
+
+        <div className="input-botones">
           <button
-            className="boton menos"
+            className="boton"
             type="button"
             onClick={() => { handleClick(-1) }}
           >
             -
           </button>
           <input
-            className="input-cantidad"
+            className="input"
             id="cantidad"
             name="cantidad"
             type="number"
@@ -58,15 +60,16 @@ function PlatoCard({ plato }) {
             readOnly
           />
           <button
-            className="boton mas"
+            className="boton"
             type="button"
             onClick={() => { handleClick(1) }}
           >
             +
           </button>
         </div>
+
         <button
-          className="boton-anadir"
+          className="boton-agregar"
           disabled={cantidad < 1}
           type="button"
           onClick={() => { agregarACarrito(plato, cantidad) }}

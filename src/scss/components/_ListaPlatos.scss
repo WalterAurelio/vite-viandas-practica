@@ -11,4 +11,7 @@
   display: grid;
   grid-template-columns: 
     repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  column-gap: 2rem;
+  max-width: 112rem; // 36rem cada card
+  margin: 0 auto;
 }
