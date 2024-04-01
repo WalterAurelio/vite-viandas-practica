@@ -15,8 +15,6 @@ function App() {
   const [platos, setPlatos] = useState(listaPlatos);
   const [listaCarrito, setListaCarrito] = useState([]);
   const [entrada, setEntrada] = useState([]);
-  const [isActive, setIsActive] = useState(false);
-  const [carritoActive, setCarritoActive] = useState(false);
 
   function agregarACarrito(articulo, cantidad) {
     let listaActualizada = listaCarrito;
@@ -39,28 +37,24 @@ function App() {
     <CarritoContext.Provider value={{ agregarACarrito, eliminarDeCarrito }}>
       <EntradaContext.Provider value={entrada}>
         <header className='header'>
+          <div className='container-header'>
 
-          <HamburgerMenu />
+            {/* <h1 className='logo'>Logo</h1> */}
 
-          <SearchBar filtrarPlatos={setEntrada} />
+            <HamburgerMenu />
 
-          <Carrito listaCarrito={listaCarrito} />
+            <SearchBar filtrarPlatos={setEntrada} />
 
-          {/* <h1 className='logo'>Logo</h1> */}
-
-
-
-          {/* <div className='nav-container'>
-            <nav className='nav-bar'>
+            <nav className='navbar-desktop'>
               <a href="#">Inicio</a>
               <a href="#">Categorías</a>
               <a href="#">Promos</a>
               <a href="#">Contacto</a>
             </nav>
-          </div> */}
 
-          {/* <Carrito listaArticulos={listaCarrito} /> */}
+            <Carrito listaCarrito={listaCarrito} />
 
+          </div>
         </header>
 
 

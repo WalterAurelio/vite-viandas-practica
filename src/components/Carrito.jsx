@@ -19,12 +19,14 @@ function Carrito({ listaCarrito }) {
 
   return (
     <>
-      <button
-        className={`boton-carrito ${isActive ? 'is-active' : ''} ${listaCarrito.length > 4 ? 'gt-4' : ''}`.trimEnd()}
-        onClick={() => { setIsActive(!isActive) }}
-      >
-        Carrito
-      </button>
+      <div className="container-boton-carrito"> {/* Auxiliar iPad */}
+        <button
+          className={`boton-carrito ${isActive ? 'is-active' : ''} ${listaCarrito.length > 4 ? 'gt-4' : ''}`.trimEnd()}
+          onClick={() => { setIsActive(!isActive) }}
+        >
+          Carrito
+        </button>
+      </div>
       <div className={`carrito ${isActive ? 'is-active' : ''} ${carritoVacio ? 'vacio' : ''}`.trimEnd()}>
         {
           carritoVacio &&
@@ -49,6 +51,15 @@ function Carrito({ listaCarrito }) {
             </>
           }
         </div>
+      </div>
+      <div className={`container-total desktop ${isActive ? 'is-active' : ''}`.trimEnd()}>
+        {
+          !carritoVacio &&
+          <>
+            <p>Total: </p>
+            <p>{ARPesos.format(precioTotal)}</p>
+          </>
+        }
       </div>
     </>
   );

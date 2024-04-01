@@ -1,22 +1,34 @@
 .container-searchbar {
-  margin: 0 auto;
   display: flex;
+  height: 3rem;
 
   .input,
-  .button {
+  .boton {
     border: none;
-    background-color: red;
+    background-color: bisque;
   }
 
   .input {
-    border-radius: 2rem 0 0 2rem;
-    padding-left: 2rem;
     outline: none;
+    padding-left: 2rem;
+    height: 5rem;
+    position: absolute;
+    right: 100%;
+    top: 5rem;
+    width: 100%;
+    transition: calc($transitionTime / 2);
+    z-index: 1;
+
+    &.is-active {
+      right: 0;
+    }
   }
 
-  .button {
-    border-radius: 0 2rem 2rem 0;
-    padding-right: 2rem;
+  .boton {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 4px;
+    margin-left: 1rem;
   }
 
   // Código para remover la X del input
@@ -38,5 +50,59 @@
   .input::-webkit-search-results-button,
   .input::-webkit-search-results-decoration {
     display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-searchbar {
+    /* margin: 0 auto; */
+  
+    .input,
+    .boton {
+      border: none;
+      background-color: #fff;
+    }
+  
+    .input {
+      border-radius: 2rem 0 0 2rem;
+      padding-left: 2rem;
+      outline: none;
+      position: unset;
+      height: unset;
+    }
+  
+    .boton {
+      border-radius: 0 2rem 2rem 0;
+      padding-right: 2rem;
+      margin-left: unset;
+    }
+  
+    // Código para remover la X del input
+  
+    .input::-ms-clear {
+      display: none;
+      width : 0;
+      height: 0;
+    }
+  
+    .input::-ms-reveal {
+      display: none;
+      width : 0;
+      height: 0;
+    }
+  
+    .input::-webkit-search-decoration,
+    .input::-webkit-search-cancel-button,
+    .input::-webkit-search-results-button,
+    .input::-webkit-search-results-decoration {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-searchbar {
+    margin: unset;
+    width: 30%;
   }
 }

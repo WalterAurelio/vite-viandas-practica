@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 function SearchBar({ filtrarPlatos }) {
+  const [isActive, setIsActive] = useState(false);
+
   return (
     <div className="container-searchbar">
       <input
-        className="input"
+        className={`input ${isActive ? 'is-active' : ''}`.trimEnd()}
         type='search'
         placeholder='Buscar productos'
         id='search'
@@ -14,8 +16,12 @@ function SearchBar({ filtrarPlatos }) {
           console.log(e.target.value.toLowerCase().split(' '));
         }}
       />
-      <button className="button" type='submit'>
-        Buscar
+      <button
+        className="boton"
+        type='button'
+        onClick={() => { setIsActive(!isActive) }}
+      >
+        O
       </button>
     </div>
 
