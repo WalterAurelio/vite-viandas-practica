@@ -1,6 +1,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  
 }
 
 *, *:before, *:after {
@@ -14,4 +15,23 @@ body {
 
 h1, h2, h3, p {
   margin: 0;
+}
+
+// Código para ignorar el ancho del scrollbar
+
+@media (min-width: 1200px) {
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    margin: 0;
+    width: 100vw;
+  }
+
+  body > * {
+    /* overflow-y: scroll; */
+    margin-right: -100px;
+    padding-right: 100px;    
+  }
 }

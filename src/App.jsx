@@ -36,10 +36,14 @@ function App() {
   return (
     <CarritoContext.Provider value={{ agregarACarrito, eliminarDeCarrito }}>
       <EntradaContext.Provider value={entrada}>
+        <div className='container-aux'>
+        </div>
+
         <header className='header'>
           <div className='container-header'>
-
-            {/* <h1 className='logo'>Logo</h1> */}
+            <div className='container-logo'>
+              <h1 className='logo'>2V</h1>
+            </div>
 
             <HamburgerMenu />
 
@@ -60,12 +64,13 @@ function App() {
 
 
         {/* <section className='presentacion'>
-          <ImageCarousel />
-        </section> */}
+            <ImageCarousel />
+          </section> */}
 
         <main>
           <ListaPlatos listaPlatos={platos} />
         </main>
+
       </EntradaContext.Provider>
     </CarritoContext.Provider>
   );

@@ -46,7 +46,7 @@
 
 .container-total {
   position: fixed;
-  bottom: -6%;
+  bottom: -6rem;
   left: 0;
   height: 6%;
   width: 100%;
@@ -95,7 +95,7 @@
 
 @media (min-width: 1200px) {
   .boton-carrito {
-    top: 6rem;
+    top: 1rem;
 
     &.is-active {
       position: absolute;
@@ -105,7 +105,7 @@
   .carrito {
     padding: 2rem 2rem 0;
     position: absolute;
-    top: -5rem;
+    top: -10rem;
     left: unset;
     right: 0;
     height: 100%;
@@ -128,7 +128,7 @@
     display: flex;
     position: absolute;
     border-radius: 0 0 4px 4px;
-    top: 0;
+    top: -5rem;
     left: unset;
     right: 0;
     width: 40%;
@@ -136,9 +136,8 @@
     opacity: 0;
 
     &.is-active {
-      top: 600%;
+      top: 1100%;
       opacity: unset;
     }
-    
   }
 }

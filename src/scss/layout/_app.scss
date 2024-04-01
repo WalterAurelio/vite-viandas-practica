@@ -1,5 +1,20 @@
+.container-logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logo {
+    font-size: $secondSize;
+  }
+}
+
 .header {
-  background-color: lightseagreen;
+  background-color: lightseagreen; 
 }
 
 .container-header {
@@ -8,13 +23,8 @@
   max-width: 112rem;
   margin: 0 auto;
   padding: 1rem;
-  background-color: lightseagreen;
-  // background-color: red;
+  background-color: red;
   position: relative;
-
-  .logo {
-    display: none;
-  }
 
   .navbar-desktop {
     display: none;
@@ -22,6 +32,18 @@
     a {
       text-decoration: none;
       color: #000;
+      background-color: greenyellow;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      &:hover {
+        background-color: blue;
+      }
     }
   }
 }
@@ -31,30 +53,47 @@ main {
 }
 
 @media (min-width: 768px) {
-  .container-header {
-    justify-content: space-between;
+  .container-logo {
+    position: unset;
+    height: unset;
+    margin-left: auto;
   }
 }
 
 @media (min-width: 1200px) {
+  .container-aux {
+    height: 5rem;
+    background-color: palevioletred;
+  }
+
+  .container-logo {
+    position: fixed;
+    height: 5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
   .header {
     position: sticky;
+    top: 0;
     z-index: 1;
   }
 
   .container-header {
-    height: 10rem;
+    // height: 10rem;
+    height: 5rem;
     justify-content: space-evenly;
     align-items: flex-end;
+    padding: unset;
 
     .logo {
       display: unset;
     }
 
     .navbar-desktop {
-      width: 36rem;
+      width: 42rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
     }
   }
 }

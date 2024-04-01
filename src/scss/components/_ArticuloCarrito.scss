@@ -34,7 +34,7 @@
     grid-row: 1 / 2;
     grid-column: 2 / 3;
     margin-right: 1rem;
-    height: 25%;
+    height: 3rem;
   }
 }
 
@@ -51,8 +51,8 @@
     }
     
     .boton-eliminar {
+      margin-top: auto;
       grid-row: unset;
-      height: unset;
     }
   }
 }
@@ -79,20 +79,6 @@
       flex-direction: column;
       justify-content: space-between;
       height: 70%;
-    }
-
-    .boton-eliminar {
-      height: max(40%, 3rem);
-      margin-top: auto;
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .articulo-carrito {
-    
-    .boton-eliminar {
-      height: 100%;
     }
   }
 }

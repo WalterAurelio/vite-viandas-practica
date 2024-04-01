@@ -1,8 +1,9 @@
 .container-cards {
   display: grid;
   grid-template-columns: 
-    repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+    repeat(auto-fill, minmax(min(100%, 360px), 1fr));
   column-gap: 2rem;
-  max-width: 112rem; // 36rem cada card
+  row-gap: 1rem;
+  max-width: 112rem; // 36rem cada card + 2 * 2rem column gap
   margin: 0 auto;
 }
