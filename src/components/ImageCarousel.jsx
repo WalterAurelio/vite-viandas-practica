@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { imagenes } from "../auxObject/imagenes";
 import Imagen from "./Imagen";
 
@@ -49,8 +49,8 @@ function ImageCarousel() {
   }
 
   return (
-    <div className='contenedor-main'>
-      <div ref={ref} className='contenedor-imgs'>
+    <div className='container-carousel'>
+      <div ref={ref} className='container-imagenes'>
         {
           imagenes.map((img, index) =>
             <Imagen
@@ -62,22 +62,40 @@ function ImageCarousel() {
         }
       </div>
 
-      <button
-        type='button'
-        onClick={() => {
-          handleClick(-1);
-        }}
-      >
-        Izquierda
-      </button>
-      <button
-        type='button'
-        onClick={() => {
-          handleClick(1);
-        }}
-      >
-        Derecha
-      </button>
+      <div className="container-boton izquierda">
+        <button
+          className="boton"
+          type="button"
+          onClick={() => {
+            handleClick(-1);
+          }}
+        >
+          {'<'}
+        </button>
+      </div>
+
+      <div className="container-boton derecha">
+        <button
+          className="boton"
+          type="button"
+          onClick={() => {
+            handleClick(1);
+          }}
+        >
+          {'>'}
+        </button>
+      </div>
+
+      <div className="container-indicadores">
+        {
+          imagenes.map((img, index) =>
+            <div
+              key={index}
+              className={`indicador ${indexActual === index ? 'is-active' : ''}`.trimEnd()}>
+            </div>
+          )
+        }
+      </div>
     </div>
   );
 }

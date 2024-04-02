@@ -21,18 +21,20 @@ function Carrito({ listaCarrito }) {
     <>
       <div className="container-boton-carrito"> {/* Auxiliar iPad */}
         <button
-          className={`boton-carrito ${isActive ? 'is-active' : ''} ${listaCarrito.length > 4 ? 'gt-4' : ''}`.trimEnd()}
+          className={`boton-carrito ${isActive ? 'is-active' : ''}`.trimEnd()}
           onClick={() => { setIsActive(!isActive) }}
         >
           Carrito
         </button>
       </div>
       <div className={`carrito ${isActive ? 'is-active' : ''} ${carritoVacio ? 'vacio' : ''}`.trimEnd()}>
+        <div className="container-bg">
+        </div>
         {
           carritoVacio &&
-          <p className='mensaje vacio'>El carrito se encuentra vacío.</p>
+          <p className='mensaje-vacio'>El carrito se encuentra vacío.</p>
         }
-        <div>
+        <div className="container-listacarrito">
           {
             listaCarrito.map((articulo, index) =>
               <ArticuloCarrito
@@ -51,15 +53,6 @@ function Carrito({ listaCarrito }) {
             </>
           }
         </div>
-      </div>
-      <div className={`container-total desktop ${isActive ? 'is-active' : ''}`.trimEnd()}>
-        {
-          !carritoVacio &&
-          <>
-            <p>Total: </p>
-            <p>{ARPesos.format(precioTotal)}</p>
-          </>
-        }
       </div>
     </>
   );

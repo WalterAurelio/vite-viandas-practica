@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import SearchBar from './components/SearchBar';
 import ImageCarousel from './components/ImageCarousel';
 import Carrito from './components/Carrito';
@@ -15,6 +15,18 @@ function App() {
   const [platos, setPlatos] = useState(listaPlatos);
   const [listaCarrito, setListaCarrito] = useState([]);
   const [entrada, setEntrada] = useState([]);
+  const [isVisible, setIsVisible] = useState(true);
+  const ref = useRef(null);
+
+  /* const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  });
+
+  observer.observe(ref.current); */
 
   function agregarACarrito(articulo, cantidad) {
     let listaActualizada = listaCarrito;
@@ -36,12 +48,12 @@ function App() {
   return (
     <CarritoContext.Provider value={{ agregarACarrito, eliminarDeCarrito }}>
       <EntradaContext.Provider value={entrada}>
-        <div className='container-aux'>
+        <div ref={ref} className='container-aux'>
         </div>
 
         <header className='header'>
           <div className='container-header'>
-            <div className='container-logo'>
+            <div className={`container-logo ${isVisible ? '' : 'is-scrolled'}`}>
               <h1 className='logo'>2V</h1>
             </div>
 
@@ -61,14 +73,9 @@ function App() {
           </div>
         </header>
 
-
-
-        {/* <section className='presentacion'>
-            <ImageCarousel />
-          </section> */}
-
         <main>
-          <ListaPlatos listaPlatos={platos} />
+          <ImageCarousel />
+          {/* <ListaPlatos listaPlatos={platos} /> */}
         </main>
 
       </EntradaContext.Provider>

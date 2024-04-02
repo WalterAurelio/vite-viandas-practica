@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useRef } from "react";
-import { IndexContext } from '../contexts/IndexContext';
+import React from "react";
 
 function Imagen({ img, index }) {
   return (
     <img
       id={index}
       src={img}
-      className="img"
+      className="imagen"
     />
   );
 }

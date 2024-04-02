@@ -1,9 +1,59 @@
-.contenedor-imgs {
-  max-width: 768px;
-  display: flex;
-  overflow-x: scroll;
+.container-carousel {
+  max-width: 112rem;
+  height: 30vh;
+  margin: 0 auto;
+  position: relative;
   
-  .img {
+  .container-imagenes {
+    max-width: 112rem;
+    display: flex;
+    overflow-x: hidden;
+    background-color: pink;
+    height: 100%;
+  }
+
+  .container-boton {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    // background-color: green;
+
+    &.derecha {
+      right: 0;
+    }
+
+    .boton {
+      border: none;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+    }
+  }
+
+  .container-indicadores {
+    background-color: purple;
+    position: absolute;
     width: 100%;
+    bottom: 1rem;
+    display: flex;
+    justify-content: center;
+
+    .indicador {
+      background-color: greenyellow;
+      height: 1rem;
+      width: 1rem;
+      margin-right: 1rem;
+      border-radius: 50%;
+
+      &.is-active {
+        background-color: red;
+      }
+
+      &:last-of-type {
+        margin-right: unset;
+      }
+    }
   }
 }
