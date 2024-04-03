@@ -1,62 +1,32 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { imagenes } from "../auxObject/imagenes";
 import Imagen from "./Imagen";
 
 function ImageCarousel() {
-  const ref = useRef(null);
-  let containerWidth = 0;
-  let indexActual = 0;
-  let aux = 0;
+  const [indexActual, setIndexActual] = useState(0);
 
   useEffect(() => {
-    containerWidth = ref.current.clientWidth;
-    const intervalId = setInterval(() => {
-      indexActual = (indexActual + 1) % imagenes.length;
-      aux = (containerWidth * indexActual) % (containerWidth * imagenes.length);
-      ref.current.scrollTo({
-        left: aux,
-        behavior: 'smooth'
-      });
+    const timeoutId = setTimeout(() => {
+      const value = (indexActual + 1) % imagenes.length;
+      setIndexActual(value);
     }, 2000);
 
     return () => {
-      clearInterval(intervalId);
+      clearTimeout(timeoutId);
     }
-  }, []);
-
-  useEffect(() => {
-    containerWidth = ref.current.clientWidth;
-    function hola() {
-      containerWidth = ref.current.clientWidth;
-      ref.current.scrollTo({
-        left: indexActual * containerWidth
-      });
-    }
-    window.addEventListener('resize', hola);
-
-    return () => {
-      window.removeEventListener('resize', hola);
-    }
-  }, []);
-
-  function handleClick(num) {
-    indexActual = indexActual + num === -1 ? imagenes.length - 1 : (indexActual + num) % imagenes.length;
-    aux = aux + num === -1 ? containerWidth * (imagenes.length - 1) : containerWidth * indexActual;
-    ref.current.scrollTo({
-      left: aux,
-      behavior: 'smooth'
-    });
-  }
+  }, [indexActual]);
 
   return (
     <div className='container-carousel'>
-      <div ref={ref} className='container-imagenes'>
+      <div className='container-imagenes'>
         {
-          imagenes.map((img, index) =>
+          imagenes.map((image, index) =>
             <Imagen
               key={index}
-              img={img}
+              image={image}
               index={index}
+              indexActual={indexActual}
+              length={imagenes.length}
             />
           )
         }
@@ -67,7 +37,8 @@ function ImageCarousel() {
           className="boton"
           type="button"
           onClick={() => {
-            handleClick(-1);
+            const value = indexActual - 1 === -1 ? imagenes.length - 1 : indexActual - 1;
+            setIndexActual(value);
           }}
         >
           {'<'}
@@ -79,7 +50,8 @@ function ImageCarousel() {
           className="boton"
           type="button"
           onClick={() => {
-            handleClick(1);
+            const value = (indexActual + 1) % imagenes.length;
+            setIndexActual(value);
           }}
         >
           {'>'}

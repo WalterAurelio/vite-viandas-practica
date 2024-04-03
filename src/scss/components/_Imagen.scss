@@ -1,4 +1,19 @@
 .imagen {
   width: 100%;
   object-fit: contain;
+  transition: $transitionTime;
+
+  position: absolute;
+  left: 0;
+  z-index: 0;
+
+  &.mas-uno {
+    left: 100%;
+    z-index: -1;
+  }
+
+  &.menos-uno {
+    left: -100%;
+    z-index: -1;
+  }
 }
