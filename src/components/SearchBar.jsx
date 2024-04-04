@@ -13,7 +13,6 @@ function SearchBar({ filtrarPlatos }) {
         name='search'
         onChange={(e) => {
           filtrarPlatos(e.target.value.toLowerCase().split(' '));
-          console.log(e.target.value.toLowerCase().split(' '));
         }}
       />
       <button

@@ -12,6 +12,9 @@ function HamburgerMenu() {
         <div className="bar"></div>
       </button>
       <nav className={`navbar-mobile ${isActive ? 'is-active' : ''}`.trimEnd()}>
+        <div className="container-bg">
+        </div>
+
         <a href="#">Inicio</a>
         <a href="#">Categorías</a>
         <a href="#">Promos</a>
