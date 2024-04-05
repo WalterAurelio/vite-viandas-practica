@@ -2,13 +2,8 @@
   display: flex;
   height: 3rem;
 
-  .input,
-  .boton {
-    border: none;
-    background-color: bisque;
-  }
-
   .input {
+    border: none;
     outline: none;
     padding-left: 2rem;
     height: 5rem;
@@ -25,10 +20,16 @@
   }
 
   .boton {
-    height: 3rem;
-    width: 3rem;
-    border-radius: 4px;
-    margin-left: 1rem;
+    border: none;
+    z-index: 1;
+    height: 5rem;
+    width: 5rem;
+    position: relative;
+    top: -1rem;
+
+    &:hover {
+      background-color: blue;
+    }
   }
 
   // Código para remover la X del input
@@ -75,7 +76,9 @@
     .boton {
       border-radius: 0 2rem 2rem 0;
       padding-right: 2rem;
-      margin-left: unset;
+      height: 3rem;
+      width: 3rem;
+      position: unset;
     }
   
     // Código para remover la X del input

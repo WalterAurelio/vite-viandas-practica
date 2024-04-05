@@ -5,7 +5,8 @@
 @import "base/mixins";
 @import "base/globales";
 
-@import "layout/app";
+// Componentes
+
 @import "components/ArticuloCarrito";
 @import "components/Carrito";
 @import "components/HamburguerMenu";
@@ -13,4 +14,11 @@
 @import "components/ImagenCarousel";
 @import "components/ListaPlatos";
 @import "components/PlatoCard";
-@import "components/SearchBar"
+@import "components/SearchBar";
+
+// Layout
+
+@import "layout/app";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/infoContacto";

@@ -2,11 +2,14 @@
   display: none;
   cursor: pointer;
   border: none;
-  background: lightblue;
   z-index: 3;
   width: 5rem;
   height: 5rem;
   padding: 1rem;
+
+  &:hover {
+    background-color: blue;
+  }
 
   .bar, &::before, &::after {
     content: '';

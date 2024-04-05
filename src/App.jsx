@@ -50,9 +50,7 @@ function App() {
     <CarritoContext.Provider value={{ agregarACarrito, eliminarDeCarrito }}>
       <EntradaContext.Provider value={entrada}>
 
-        <div ref={ref} className='container-aux'>
-        </div>
-
+        <div ref={ref} className='container-aux'></div>
         <header className='header'>
           <div className='container-header'>
             <div className={`container-logo ${isVisible ? '' : 'is-scrolled'}`.trimEnd()}>
@@ -71,11 +69,10 @@ function App() {
             </nav>
 
             <Carrito listaCarrito={listaCarrito} />
-
           </div>
         </header>
 
-        <main>
+        <main className='main'>
           {/* <ImageCarousel /> */}
           <ListaPlatos listaPlatos={listaPlatos} />
         </main>
