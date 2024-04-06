@@ -8,7 +8,7 @@ import { CarritoContext } from './contexts/CarritoContext';
 import { EntradaContext } from './contexts/EntradaContext';
 import { v4 as uuidv4 } from 'uuid';
 import HamburgerMenu from './components/HamburgerMenu';
-import { BsInstagram, BsTwitterX, BsYoutube } from "react-icons/bs";
+import { BsInstagram, BsTwitterX, BsYoutube, BsWhatsapp } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 
 let listaPlatos = platosJson.platos;
@@ -77,6 +77,9 @@ function App() {
         <main className='main'>
           {/* <ImageCarousel /> */}
           <ListaPlatos listaPlatos={listaPlatos} />
+          <div className='red-social wp'>
+            <BsWhatsapp className='icono' />
+          </div>
         </main>
 
         <section className='container-infocontacto'>

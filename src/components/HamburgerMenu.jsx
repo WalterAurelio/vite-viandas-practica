@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { IoHomeOutline } from "react-icons/io5";
+import { BiCategory } from "react-icons/bi";
+import { TbDiscount2 } from "react-icons/tb";
+import { IoIosContact } from "react-icons/io";
 
 function HamburgerMenu() {
   const [isActive, setIsActive] = useState(false);
@@ -15,10 +19,22 @@ function HamburgerMenu() {
         <div className="container-bg">
         </div>
 
-        <a href="#">Inicio</a>
-        <a href="#">Categorías</a>
-        <a href="#">Promos</a>
-        <a href="#">Contacto</a>
+        <a href="#">
+          <IoHomeOutline className="icono" />
+          Inicio
+        </a>
+        <a href="#">
+          <BiCategory className="icono" />
+          Categorías
+        </a>
+        <a href="#">
+          <TbDiscount2 className="icono" />
+          Promos
+        </a>
+        <a href="#">
+          <IoIosContact className="icono" />
+          Contacto
+        </a>
       </nav>
     </>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ArticuloCarrito from "./ArticuloCarrito";
+import { FiShoppingCart } from "react-icons/fi";
 
 let ARPesos = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -24,7 +25,7 @@ function Carrito({ listaCarrito }) {
           className={`boton-carrito ${isActive ? 'is-active' : ''}`.trimEnd()}
           onClick={() => { setIsActive(!isActive) }}
         >
-          Carrito
+          <FiShoppingCart className="icono" />
         </button>
       </div>
       <div className={`carrito ${isActive ? 'is-active' : ''} ${carritoVacio ? 'vacio' : ''}`.trimEnd()}>
@@ -48,7 +49,7 @@ function Carrito({ listaCarrito }) {
           {
             !carritoVacio &&
             <>
-              <p>Total: </p>
+              <p>Total:</p>
               <p>{ARPesos.format(precioTotal)}</p>
             </>
           }

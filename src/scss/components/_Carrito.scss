@@ -2,6 +2,7 @@
   position: absolute;
   top: 0;
   right: 0;
+  width: 5rem;
   height: 5rem;
   padding: 0 1rem;
   border: none;
@@ -14,6 +15,14 @@
 
   &.is-active {
     position: fixed;
+  }
+
+  .icono {
+    font-size: 2.8rem;
+
+    &:hover {
+      color: white;
+    }
   }
 }
 
@@ -39,6 +48,10 @@
 
     .mensaje-vacio {
       z-index: 1;
+    }
+
+    .container-total {
+      background: none;
     }
   }
 }
