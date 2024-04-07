@@ -1,34 +1,23 @@
 .main {
-  padding: 1rem 0;
+  padding: $padding 0;
   background-color: yellow;
   min-height: 100vh;
   position: relative;
 
-  .red-social {
+  .red-social.wp {
     position: fixed;
-    bottom: 1rem;
-    right: 0.2rem;
-    width: 4.4rem;
-    height: 4.4rem;
+    bottom: $margin;
+    right: $margin;
+    width: 3.6rem;
+    height: 3.6rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #25d366;
-    cursor: pointer;
 
     .icono {
       color: white;
-      font-size: 2.6rem;
-    }
-
-    @media (min-width: 1200px) {
-      width: 5rem;
-      height: 5rem;
-
-      .icono {
-        font-size: 3rem;
-      }
     }
   }
 }

@@ -4,7 +4,7 @@
   .info-delivery,
   .info-contacto {
     background-color: green;
-    padding: 1rem;
+    padding: $padding;
   }
 
   .info-delivery {
@@ -14,17 +14,17 @@
 
     p {
       text-align: center;
-      line-height: 1.5;
+      line-height: 1.6;
     }
   }
 }
 
 .info-contacto {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 40% auto;
 
   h2 {
-    padding-bottom: 1rem;
+    padding-bottom: $padding;
     grid-column: 1 / 3;
     border-bottom: solid 1px;
   }
@@ -34,18 +34,18 @@
     order: -1;
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: calc($margin * 2);
   }
 
   .red-social {
-    width: 3.4rem;
-    height: 3.4rem;
+    width: 3.6rem;
+    height: 3.6rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1rem;
-    border: solid 1px #999;
+    margin-right: $margin;
+    border: solid 1px $gris;
     
     &:last-child {
       margin-right: unset;
@@ -66,7 +66,7 @@
     }
   
     .icono {
-      color: #999;
+      color: $gris;
     }
   
     &.fb:hover {
@@ -90,11 +90,11 @@
     .lista {
       list-style: none;
       padding: 0;
-      margin: 1rem 0;
+      margin: $margin 0;
     }
 
     li {
-      margin-bottom: 0.5rem;
+      margin-bottom: calc($margin / 2);
     
       &:last-of-type {
         margin-bottom: unset;
@@ -103,15 +103,22 @@
 
     a {
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: calc($mainSize / 3);
     }
+  }
+}
+
+@media (max-width: 280px) {
+  .container-lista:last-child .lista {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 }
 
 @media (min-width: 360px) {
   .info-contacto {
     .container-lista:last-of-type {
-      margin-top: unset;
       margin-left: auto;
     }
   }
@@ -119,7 +126,6 @@
 
 @media (min-width: 540px) {
   .info-contacto {
-    /* grid-template-columns: 40% auto auto; */
 
     h2, .container-redessociales {
       grid-column: unset;
@@ -135,7 +141,7 @@
       margin-bottom: unset;
       border-bottom: 1px solid;
       justify-content: flex-end;
-      padding-bottom: 1rem;
+      padding-bottom: $padding;
     }
 
     .container-lista {

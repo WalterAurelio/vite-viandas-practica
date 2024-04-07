@@ -36,11 +36,6 @@ function PlatoCard({ plato }) {
       </div>
 
       <div className="container-input-botones">
-
-        <label className="label" htmlFor="cantidad">
-          Cantidad
-        </label>
-
         <div className="input-botones">
           <button
             className="boton"

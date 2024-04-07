@@ -2,27 +2,14 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 5rem;
-  height: 5rem;
-  padding: 0 1rem;
+  width: $buttonHeight;
+  height: $buttonHeight;
   border: none;
   z-index: 2;
-
-  &:hover {
-    background-color: blue;
-    cursor: pointer;
-  }
+  background-color: $amarillo;
 
   &.is-active {
     position: fixed;
-  }
-
-  .icono {
-    font-size: 2.8rem;
-
-    &:hover {
-      color: white;
-    }
   }
 }
 
@@ -34,7 +21,7 @@
   width: 100%;
   height: 100%;
   background-color: beige;
-  padding: 6rem 0 5rem;
+  padding: $buttonHeight 0;
   transition: $transitionTime;
 
   &.is-active {
@@ -62,7 +49,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 5rem;
+  height: $buttonHeight;
 
   @media (min-width: 1200px) {
     display: none;
@@ -79,15 +66,17 @@
   background-color: red;
   position: absolute;
   left: 0;
+  bottom: 0;
   width: 100%;
-  height: 5rem;
+  height: $buttonHeight;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
-
+  padding: 0 $padding;
+  
   p {
     font-weight: bold;
+    font-size: calc($mainSize / 1.6);
   }
 }
 
@@ -125,6 +114,6 @@
   }
 
   .container-listacarrito {
-    padding-top: 1rem;
+    padding-top: $padding;
   }
 }

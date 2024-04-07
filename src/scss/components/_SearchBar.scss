@@ -1,17 +1,18 @@
 .container-searchbar {
   display: flex;
-  height: 3rem;
+  background-color: yellow;
+  height: $buttonHeight - (2 * $margin);
 
   .input {
     border: none;
     outline: none;
-    padding-left: 2rem;
-    height: 5rem;
+    padding-left: $padding;
+    height: $buttonHeight;
     position: absolute;
     right: 100%;
-    top: 5rem;
+    top: $buttonHeight;
     width: 100%;
-    transition: calc($transitionTime / 2);
+    transition: $transitionTime;
     z-index: 1;
 
     &.is-active {
@@ -22,15 +23,11 @@
   .boton {
     border: none;
     z-index: 1;
-    height: 5rem;
-    width: 5rem;
+    width: $buttonHeight;
+    height: $buttonHeight;
     position: relative;
-    top: -1rem;
+    top: -$margin;
     cursor: pointer;
-
-    &:hover {
-      background-color: blue;
-    }
   }
 
   // Código para remover la X del input
@@ -58,7 +55,7 @@
 @media (min-width: 768px) {
   .container-searchbar {
     margin-right: auto;
-    margin-left: 1rem;
+    margin-left: $margin;
     
     .input,
     .boton {
@@ -68,7 +65,6 @@
   
     .input {
       border-radius: 2rem 0 0 2rem;
-      padding-left: 2rem;
       outline: none;
       position: unset;
       height: unset;
@@ -76,31 +72,14 @@
   
     .boton {
       border-radius: 0 2rem 2rem 0;
-      padding-right: 2rem;
-      height: 3rem;
-      width: 3rem;
+      padding-right: $padding;
+      height: unset;
+      width: unset;
       position: unset;
-    }
-  
-    // Código para remover la X del input
-  
-    .input::-ms-clear {
-      display: none;
-      width : 0;
-      height: 0;
-    }
-  
-    .input::-ms-reveal {
-      display: none;
-      width : 0;
-      height: 0;
-    }
-  
-    .input::-webkit-search-decoration,
-    .input::-webkit-search-cancel-button,
-    .input::-webkit-search-results-button,
-    .input::-webkit-search-results-decoration {
-      display: none;
+
+      &:hover {
+        background-color: blue;
+      }
     }
   }
 }
@@ -109,7 +88,5 @@
   .container-searchbar {
     margin: unset;
     width: 30%;
-    padding-bottom: 1rem;
-    height: 4rem;
   }
 }

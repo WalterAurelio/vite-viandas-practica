@@ -1,6 +1,4 @@
 .no-resultados {
-  font-size: $secondSize;
-  font-weight: bold;
   max-width: 112rem;
   margin: 0 auto;
   height: 100vh;
@@ -13,11 +11,10 @@
   display: grid;
   grid-template-columns: 
     repeat(auto-fill, minmax(min(100%, 360px), 1fr));
-  column-gap: 2rem;
-  row-gap: 1rem;
+  gap: $margin;
   max-width: 112rem; // 36rem cada card + 2 * 2rem column gap
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 $padding;
 
   @media (min-width: 1200px) {
     padding: unset;

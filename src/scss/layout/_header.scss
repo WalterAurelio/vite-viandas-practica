@@ -18,18 +18,16 @@
 
     a {
       text-decoration: none;
-      color: #000;
       background-color: greenyellow;
-      padding-bottom: 1rem;
-      padding-top: 1rem;
-      height: 5rem;
+      padding: $padding;
+      height: $buttonHeight;
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
 
       &:hover {
-        background-color: blue;
+        background-color: lightblue;
       }
     }
   }
@@ -40,62 +38,39 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 5rem;
+  height: $buttonHeight;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  .logo {
-    font-size: $secondSize;
-  }
-}
-
-@media (min-width: 768px) {
-  .container-logo {
-    position: unset;
-    height: unset;
-    margin-left: auto;
-  }
 }
 
 @media (min-width: 1200px) {
   .container-aux {
-    height: 10rem;
+    height: $buttonHeight;
     background-color: palevioletred;
   }
 
   .container-logo {
     position: absolute;
-    height: 5rem;
-    width: 5rem;
-    right: 45%;
-    top: -7.5rem;
+    width: $buttonHeight;
+    height: $buttonHeight;
+    top: -$buttonHeight;
+    margin: 0 auto;
     background-color: green;
     transition: $transitionTime;
-
-    .logo {
-      font-size: 5rem;
-      transition: $transitionTime;
-    }
 
     &.is-scrolled {
       right: 100%;
       top: 0;
-
-      .logo {
-        font-size: 2rem;
-      }
     }
   }
 
   .container-header {
-    height: 5rem;
+    height: $buttonHeight;
     justify-content: space-evenly;
-    align-items: flex-end;
-    padding: unset;
 
     .navbar-desktop {
-      width: 42rem;
+      width: 40%;
       display: flex;
       justify-content: space-around;
     }

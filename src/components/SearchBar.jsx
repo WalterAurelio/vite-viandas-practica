@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BsSearch } from "react-icons/bs";
 
 function SearchBar({ filtrarPlatos }) {
   const [isActive, setIsActive] = useState(false);
@@ -20,7 +21,7 @@ function SearchBar({ filtrarPlatos }) {
         type='button'
         onClick={() => { setIsActive(!isActive) }}
       >
-        O
+        <BsSearch className="icono" />
       </button>
     </div>
 
