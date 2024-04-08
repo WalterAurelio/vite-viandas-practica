@@ -1,5 +1,5 @@
 .header {
-  background-color: lightseagreen;
+  background-color: $marronClaro;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -10,7 +10,6 @@
   align-items: center;
   max-width: 112rem;
   margin: 0 auto;
-  background-color: red;
   position: relative;
 
   .navbar-desktop {
@@ -18,7 +17,7 @@
 
     a {
       text-decoration: none;
-      background-color: greenyellow;
+      color: $beige;
       padding: $padding;
       height: $buttonHeight;
       display: flex;
@@ -27,7 +26,7 @@
       width: 100%;
 
       &:hover {
-        background-color: lightblue;
+        background-color: $rojo;
       }
     }
   }
@@ -36,32 +35,79 @@
 .container-logo {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  right: $buttonHeight;
+  width: $buttonHeight;
   height: $buttonHeight;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  .logo {
+    color: lighten(orangered, 5);
+    font-size: calc($mainSize / 1.6 * 1.06);
+  }
+  
+  .nombre {
+    font-family: $fuenteLogo;
+    font-size: calc($mainSize / 2.4);
+    color: lighten($amarillo, 10);
+  }
+}
+
+@include telefono {
+  .container-logo {
+    width: calc($buttonHeight * 2);
+
+    .nombre {
+      display: none;
+    }
+
+    &::after {
+      content: 'Viandas Viking';
+      font-family: $fuenteLogo;
+      color: lighten($amarillo, 10);
+      font-size: calc($mainSize / 2.4);
+      font-weight: bold;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
   .container-aux {
-    height: $buttonHeight;
-    background-color: palevioletred;
+    height: calc($buttonHeight * 1.6);
+    background-color: $marronClaro;
   }
 
   .container-logo {
     position: absolute;
-    width: $buttonHeight;
-    height: $buttonHeight;
-    top: -$buttonHeight;
-    margin: 0 auto;
-    background-color: green;
+    width: 100%;
+    height: calc($buttonHeight * 1.6);
+    left: 0;
+    top: calc($buttonHeight * (-1.6));
     transition: $transitionTime;
 
+    .logo {
+      font-size: $mainSize;
+    }
+
+    &::after {
+      font-size: $mainSize;
+    }
+
     &.is-scrolled {
-      right: 100%;
+      width: $buttonHeight;
+      height: $buttonHeight;
       top: 0;
+
+      .logo {
+        font-size: calc($mainSize / 1.6 * 1.06);
+      }
+
+      &::after {
+        content: 'VK';
+        font-size: calc($mainSize / 2.4);
+      }
     }
   }
 

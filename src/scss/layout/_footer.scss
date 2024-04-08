@@ -1,8 +1,9 @@
 .container-footer {
-  background-color: lightgoldenrodyellow;
+  background-color: $marronOscuro;
   padding: $padding 0;
 
   p {
     text-align: center;
+    color: $beige;
   }
 }

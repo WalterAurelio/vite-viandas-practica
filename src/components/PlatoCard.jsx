@@ -72,18 +72,6 @@ function PlatoCard({ plato }) {
           Agregar al pedido
         </button>
       </div>
-
-      {/* {
-        isAdded && <button
-          type="button"
-          onClick={() => {
-            eliminarDeCarrito(plato)
-            setIsAdded(false);
-          }}
-        >
-          Quitar del pedido
-        </button>
-      } */}
     </article>
   );
 }

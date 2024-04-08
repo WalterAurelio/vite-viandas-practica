@@ -19,6 +19,7 @@
 
     p {
       margin-bottom: $margin;
+      color: $marronOscuro;
     }
   }
 
@@ -29,11 +30,23 @@
   }
 
   &:nth-child(even) {
-    background-color: darken(beige, 15);
+    background-color: darken($beige, 10);
   }
 
   .boton-eliminar {
     height: $lowPriority;
+    border: solid 1px $marronClaro;
+    background: none;
+    border-radius: 4px;
+    color: $marronClaro;
+    transition: calc($transitionTime / 1.6);
+    letter-spacing: 0.1rem;
+
+    &:hover {
+      background-color: $amarillo;
+      border: none;
+      cursor: pointer;
+    }
   }
 }
 

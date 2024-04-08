@@ -1,6 +1,5 @@
 .container-searchbar {
   display: flex;
-  background-color: yellow;
   height: $buttonHeight - (2 * $margin);
 
   .input {
@@ -27,7 +26,18 @@
     height: $buttonHeight;
     position: relative;
     top: -$margin;
-    cursor: pointer;
+    background: none;
+    color: $beige;
+    font-size: calc($mainSize / 1.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.is-active, &:hover {
+      background-color: $amarillo;
+      color: $marronOscuro;
+      cursor: pointer;
+    }
   }
 
   // Código para remover la X del input
@@ -60,7 +70,7 @@
     .input,
     .boton {
       border: none;
-      background-color: #fff;
+      background-color: $blanco;
     }
   
     .input {
@@ -76,9 +86,11 @@
       height: unset;
       width: unset;
       position: unset;
+      color: $marronOscuro;
 
-      &:hover {
-        background-color: blue;
+      &:hover, &.is-active {
+        background-color: $blanco;
+        color: $rojo;
       }
     }
   }

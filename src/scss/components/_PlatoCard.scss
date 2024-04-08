@@ -1,6 +1,6 @@
 .plato-card {
   padding: $padding;
-  background-color: aquamarine;
+  background-color: darken($beige, 15);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -24,6 +24,7 @@
       bottom: $margin;
       left: $margin;
       font-weight: bold;
+      color: $marronOscuro;
     }
   }
 
@@ -32,10 +33,15 @@
 
     .nombre-plato {
       margin-bottom: $margin;
+      font-size: calc($mainSize / 1.6);
+      font-weight: bold;
+      color: $marronClaro;
     }
 
     .descripcion-plato {
       text-align: justify;
+      color: $marronOscuro;
+      line-height: 1.6;
     }
   }
 
@@ -49,12 +55,56 @@
       justify-content: center;
       margin-bottom: $margin;
     }
+
+    .boton-agregar {
+      border: none;
+      height: $lowPriority;
+      background: none;
+      border: 1px solid $marronClaro;
+      border-radius: 4px;
+      color: $marronClaro;
+      text-transform: uppercase;
+      letter-spacing: normal;
+      transition: calc($transitionTime / 1.6);
+      font-size: calc($secondSize / 1.6);
+
+      &:hover {
+        cursor: pointer;
+        background-color: $rojo;
+        border: none;
+        color: $beige;
+        letter-spacing: 0.1rem;
+        font-weight: bold;
+      }
+    }
   }
 }
 
-.input-botones .input {
-  width: $buttonHeight;
-  text-align: end;
-  margin-right: $margin;
-  margin-left: $margin;
+.input-botones {
+  .input, .boton {
+    width: $lowPriority;
+    height: $lowPriority;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .input {
+    text-align: end;
+    margin: 0 $margin;
+    background-color: $blanco;
+    color: $marronOscuro;
+  }
+
+  .boton {
+    background-color: $marronClaro;
+    color: $beige;
+    font-size: $secondSize;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($amarillo, 5);
+    }
+  }
+
 }

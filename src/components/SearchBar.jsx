@@ -17,7 +17,7 @@ function SearchBar({ filtrarPlatos }) {
         }}
       />
       <button
-        className="boton"
+        className={`boton ${isActive ? 'is-active' : ''}`.trimEnd()}
         type='button'
         onClick={() => { setIsActive(!isActive) }}
       >

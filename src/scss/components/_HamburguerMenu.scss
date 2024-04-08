@@ -2,19 +2,27 @@
   display: none;
   cursor: pointer;
   border: none;
-  z-index: 3;
   width: $buttonHeight;
   height: $buttonHeight;
   padding: $padding;
+  background: none;
+  z-index: 3;
+
+  &.is-active, &:hover {
+    background-color: $amarillo;
+    
+    .bar, &::before, &::after {
+      background-color: $marronOscuro;
+    }  
+  }
 
   .bar, &::before, &::after {
     content: '';
     display: block;
     width: 100%;
     height: 0.5rem;
-    background-color: #000;
+    background-color: $beige;
     border-radius: 1rem;
-    transition: $transitionTime;
   }
 
   .bar, &::before {
@@ -38,7 +46,7 @@
   display: none;
   position: fixed;
   top: 0;
-  background-color: bisque;
+  background-color: $beige;
   z-index: 2;
   height: 100%;
   width: 100%;
@@ -48,13 +56,28 @@
 
   a {
     display: flex;
+    align-items: center;
     text-decoration: none;
     padding: $padding;
-    margin-bottom: $margin;
-    background-color: wheat;
+    color: $marronOscuro;
+    font-size: calc($secondSize / 1.6);
+    height: $buttonHeight;
+
+    &:nth-child(even) {
+      background-color: darken($beige, 10);
+    }
+
+    &:nth-child(odd) {
+      background-color: darken($beige, 5);
+    }
+
+    &:hover {
+      background-color: lighten($amarillo, 5);
+    }
 
     .icono {
       margin-right: $margin;
+      font-size: calc($mainSize / 1.6);
     }
   }
 
@@ -63,7 +86,7 @@
   }
 
   .container-bg {
-    background-color: green;
+    background-color: $rojo;
     position: absolute;
     top: 0;
     left: 0;
@@ -91,4 +114,33 @@
   .navbar-mobile {
     display: unset;
   }
+}
+
+.hamburger-footer {
+  position: absolute;
+  bottom: 0;
+  background-color: darken($beige, 10);
+  width: 100%;
+  height: $buttonHeight;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-weight: bold;
+    color: $marronOscuro;
+  }
+}
+
+.container-barbecue {
+  width: $buttonHeight;
+  height: $buttonHeight;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: calc($mainSize / 1.06);
+  color: $marronOscuro;
 }

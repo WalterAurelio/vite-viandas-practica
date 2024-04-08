@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IoHomeOutline } from "react-icons/io5";
+import { IoHomeOutline, IoFastFood } from "react-icons/io5";
 import { BiCategory } from "react-icons/bi";
 import { TbDiscount2 } from "react-icons/tb";
 import { IoIosContact } from "react-icons/io";
@@ -35,6 +35,15 @@ function HamburgerMenu() {
           <IoIosContact className="icono" />
           Contacto
         </a>
+
+        <div className="container-barbecue">
+          {/* <p>VK</p> */}
+          <IoFastFood />
+        </div>
+
+        <div className="hamburger-footer">
+          <p>VK®2024</p>
+        </div>
       </nav>
     </>
   );

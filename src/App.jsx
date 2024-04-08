@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
 import HamburgerMenu from './components/HamburgerMenu';
 import { BsInstagram, BsTwitterX, BsYoutube, BsWhatsapp } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
+import { IoFastFood } from "react-icons/io5";
 
 let listaPlatos = platosJson.platos;
 
@@ -56,7 +57,10 @@ function App() {
         <header className='header'>
           <div className='container-header'>
             <div className={`container-logo ${isVisible ? '' : 'is-scrolled'}`.trimEnd()}>
-              <h1 className='logo'>2V</h1>
+              <IoFastFood className='logo' />
+              <h1 className='nombre'>
+                VK
+              </h1>
             </div>
 
             <HamburgerMenu />
