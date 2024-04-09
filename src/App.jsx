@@ -57,8 +57,8 @@ function App() {
       <CarritoContext.Provider value={{ agregarACarrito, eliminarDeCarrito }}>
         <EntradaContext.Provider value={entrada}>
 
-          <div ref={ref} className='container-aux'></div>
-          <header className='header'>
+          <div ref={ref} className={`container-aux ${darkMode ? 'oscuro' : ''}`.trimEnd()}></div>
+          <header className={`header ${darkMode ? 'oscuro' : ''}`.trimEnd()}>
             <div className='container-header'>
               <div className={`container-logo ${isVisible ? '' : 'is-scrolled'}`.trimEnd()}>
                 <IoFastFood className='logo' />
@@ -82,7 +82,7 @@ function App() {
             </div>
           </header>
 
-          <main className='main'>
+          <main className={`main ${darkMode ? 'oscuro' : ''}`.trimEnd()}>
             {/* <ImageCarousel /> */}
             <ListaPlatos listaPlatos={listaPlatos} />
             <div className='red-social wp'>
@@ -92,7 +92,7 @@ function App() {
             <BotonScrollTo elemento={ref.current} isVisible={isVisible} />
           </main>
 
-          <section className='container-infocontacto'>
+          <section className={`container-infocontacto ${darkMode ? 'oscuro' : ''}`.trimEnd()}>
             <div className='info-delivery'>
               <p>Pedidos al <b>+5411-6518-2730</b>.</p>
               <p>Delivery días sábados. Costo de envío <b>$1000</b>.</p>
@@ -136,7 +136,7 @@ function App() {
             </div>
           </section>
 
-          <footer className='container-footer'>
+          <footer className={`container-footer ${darkMode ? 'oscuro' : ''}`.trimEnd()}>
             <p><b>VK®2024</b> Todos los derechos reservados.</p>
           </footer>
 

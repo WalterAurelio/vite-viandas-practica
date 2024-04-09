@@ -77,6 +77,10 @@
   .container-aux {
     height: calc($buttonHeight * 1.6);
     background-color: $marronClaro;
+
+    &.oscuro {
+      background-color: $marronOscuro;
+    }
   }
 
   .container-logo {
@@ -120,5 +124,13 @@
       display: flex;
       justify-content: space-around;
     }
+  }
+}
+
+.header.oscuro {
+  background-color: $marronOscuro;
+
+  .navbar-desktop a:hover {
+    background-color: $marronClaro;
   }
 }

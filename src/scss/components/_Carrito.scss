@@ -33,7 +33,7 @@
   height: 100%;
   background-color: $beige;
   padding: $buttonHeight 0;
-  transition: $transitionTime;
+  transition: $transitionTime left;
 
   &.is-active {
     left: 0;
@@ -76,7 +76,7 @@
 }
 
 .container-total {
-  background-color: $marronClaro;
+  background-color: $rojo;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -119,6 +119,7 @@
     padding-right: unset;
     padding-top: unset;
     opacity: 0;
+    transition: $transitionTime;
 
     &.is-active {
       top: 100%;
@@ -129,5 +130,25 @@
 
   .container-listacarrito {
     padding-top: $padding;
+  }
+}
+
+.carrito.oscuro {
+  background-color: $marronOscuroDM;
+
+  .container-bg {
+    background-color: $marronClaro;
+  }
+
+  .mensaje-vacio {
+    color: $blanco;
+  }
+
+  .container-total {
+    background-color: $marronClaro;
+  }
+
+  &.vacio .container-total {
+    background: none;
   }
 }

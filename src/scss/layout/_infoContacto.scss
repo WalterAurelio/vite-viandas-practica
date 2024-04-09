@@ -17,6 +17,10 @@
       color: $blanco;
     }
   }
+
+  &.oscuro {
+    background-color: $marronOscuro;
+  }
 }
 
 .info-contacto {

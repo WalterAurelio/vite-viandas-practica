@@ -76,3 +76,26 @@
     padding-top: $padding;
   }
 }
+
+.articulo-carrito.oscuro {
+  &:nth-child(even) {
+    background-color: $marronClaro2DM;
+  }
+
+  &:nth-child(odd) {
+    background-color: $marronClaroDM;
+  }
+
+  .info-pedido p {
+    color: $blanco;
+  }
+
+  .boton-eliminar {
+    border: solid 1px $amarillo;
+    color: $amarillo;
+
+    &:hover {
+      color: $marronClaro;
+    }
+  }
+}

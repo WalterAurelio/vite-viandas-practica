@@ -24,8 +24,8 @@
       cursor: pointer;
     }
   }
-}
 
-.aux-cont2 {
-  height: 2rem;
+  &.oscuro {
+    background-color: $marronOscuroDM;
+  }
 }

@@ -51,7 +51,7 @@
   height: 100%;
   width: 100%;
   right: 100%;
-  transition: $transitionTime;
+  transition: $transitionTime right;
   padding: ($buttonHeight + $margin) 0 0;
 
   a {
@@ -152,5 +152,83 @@
     font-size: calc($mainSize / 2.4);
     font-family: $fuenteLogo;
     font-weight: bold;
+  }
+}
+
+.container-darkmode {
+  position: absolute;
+  right: $margin;
+  bottom: calc($buttonHeight + $margin);
+  
+  .boton-darkmode {
+    cursor: pointer;
+    border: none;
+    position: relative;
+    height: 3.6rem;
+    width: 3.6rem;
+    border-radius: 50%;
+    border: solid 2px $marronOscuro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+
+    .desactivado {
+      font-size: calc($mainSize / 1.6);
+      color: $blanco;
+      opacity: 0;
+    }
+
+    .activado {
+      position: absolute;
+      font-size: calc($mainSize / 1.6);
+      color: $marronOscuro;
+    }
+  }
+
+  &.oscuro {
+    .boton-darkmode {
+      border-color: $blanco;
+
+      .desactivado {
+        opacity: unset;
+      }
+
+      .activado {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.navbar-mobile.oscuro {
+  background-color: $marronOscuroDM;
+
+  .container-bg {
+    background-color: $marronClaro;
+  }
+
+  a {
+    color: $blanco;
+
+    &:nth-child(even) {
+      background-color: $marronClaroDM;
+    }
+
+    &:nth-child(odd) {
+      background-color: $marronClaro2DM;
+    }
+
+    &:hover {
+      background-color: $marronClaro;
+    }
+  }
+
+  .hamburger-footer {
+    background-color: $marronClaro2DM;
+
+    p {
+      color: $blanco;
+    }
   }
 }

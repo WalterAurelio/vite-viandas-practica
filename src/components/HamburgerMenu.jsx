@@ -4,6 +4,7 @@ import { BiCategory } from "react-icons/bi";
 import { TbDiscount2 } from "react-icons/tb";
 import { IoIosContact } from "react-icons/io";
 import { DarkModeContext } from "../contexts/DarkModeContext";
+import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 
 function HamburgerMenu() {
   const [isActive, setIsActive] = useState(false);
@@ -17,7 +18,7 @@ function HamburgerMenu() {
       >
         <div className="bar"></div>
       </button>
-      <nav className={`navbar-mobile ${isActive ? 'is-active' : ''}`.trimEnd()}>
+      <nav className={`navbar-mobile ${isActive ? 'is-active' : ''} ${darkMode ? 'oscuro' : ''}`.trimEnd()}>
         <div className="container-bg">
         </div>
 
@@ -43,13 +44,14 @@ function HamburgerMenu() {
           <p>VK</p>
         </div>
 
-        <div className="container-darkmode">
+        <div className={`container-darkmode ${darkMode ? 'oscuro' : ''}`}>
           <button
             type="button"
             className="boton-darkmode"
             onClick={() => { setDarkMode(!darkMode) }}
           >
-            Activar Modo Oscuro
+            <MdOutlineDarkMode className="desactivado" />
+            <MdDarkMode className="activado" />
           </button>
         </div>
 

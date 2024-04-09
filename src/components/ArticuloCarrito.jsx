@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContext";
+import { DarkModeContext } from "../contexts/DarkModeContext";
 
 let ARPesos = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -8,9 +9,10 @@ let ARPesos = new Intl.NumberFormat('en-US', {
 
 function ArticuloCarrito({ articulo }) {
   const { eliminarDeCarrito } = useContext(CarritoContext);
+  const { darkMode } = useContext(DarkModeContext);
 
   return (
-    <div className="articulo-carrito">
+    <div className={`articulo-carrito ${darkMode ? 'oscuro' : ''}`.trimEnd()}>
       <img className="image" src={articulo.image} alt="img_compra" />
       <div className="info-pedido">
         <p className="nombre-pedido"><b>{articulo.name}</b></p>

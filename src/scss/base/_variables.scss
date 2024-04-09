@@ -10,6 +10,13 @@ $blanco: #F2F2F2;
 $negro: #222;
 $gris: #999;
 
+// DarkMode
+
+$marronOscuroDM: darken($marronOscuro, 6);
+$marronClaroDM: $marronOscuro;
+$marronClaro2DM: darken($marronClaroDM, 2);
+$rojoOscuroDM: darken($rojo, 15);
+
 // Fonts
 
 $fuentePrincipal: "Roboto", sans-serif;

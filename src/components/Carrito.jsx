@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ArticuloCarrito from "./ArticuloCarrito";
 import { FiShoppingCart } from "react-icons/fi";
+import { DarkModeContext } from '../contexts/DarkModeContext';
 
 let ARPesos = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD'
 });
 
-const root = document.querySelector(':root');
-
 function Carrito({ listaCarrito }) {
   const [isActive, setIsActive] = useState(false);
+  const { darkMode } = useContext(DarkModeContext);
   const carritoVacio = listaCarrito.length < 1;
   let precioTotal = 0;
 
@@ -22,15 +22,17 @@ function Carrito({ listaCarrito }) {
     <>
       <div className="container-boton-carrito"> {/* Auxiliar iPad */}
         <button
-          className={`boton-carrito ${isActive ? 'is-active' : ''}`.trimEnd()}
+          type="button"
+          className={`boton-carrito ${isActive ? 'is-active' : ''} ${darkMode ? 'oscuro' : ''}`.trimEnd()}
           onClick={() => { setIsActive(!isActive) }}
         >
           <FiShoppingCart className="icono" />
         </button>
       </div>
-      <div className={`carrito ${isActive ? 'is-active' : ''} ${carritoVacio ? 'vacio' : ''}`.trimEnd()}>
-        <div className="container-bg">
-        </div>
+      <div
+        className={`carrito ${isActive ? 'is-active' : ''} ${carritoVacio ? 'vacio' : ''} ${darkMode ? 'oscuro' : ''}`.trimEnd()}
+      >
+        <div className="container-bg"></div>
         {
           carritoVacio &&
           <p className='mensaje-vacio'>El carrito se encuentra vacío.</p>

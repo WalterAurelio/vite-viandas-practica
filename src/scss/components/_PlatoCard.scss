@@ -70,7 +70,7 @@
 
       &:hover {
         cursor: pointer;
-        background-color: $rojo;
+        background-color: $amarillo;
         border: none;
         color: $blanco;
         letter-spacing: 0.1rem;
@@ -103,8 +103,29 @@
 
     &:hover {
       cursor: pointer;
-      background-color: lighten($amarillo, 5);
+      background-color: $amarillo;
     }
   }
 
+}
+
+.plato-card.oscuro {
+  background-color: $marronClaroDM;
+
+  .nombre-plato {
+    color: $amarillo;
+  }
+
+  .descripcion-plato {
+    color: $blanco;
+  }
+
+  .boton-agregar {
+    border-color: $beige;
+    color: $beige;
+
+    &:hover {
+      background-color: $rojo;
+    }
+  }
 }
