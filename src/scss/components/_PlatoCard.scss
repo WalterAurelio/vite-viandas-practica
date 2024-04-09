@@ -1,6 +1,6 @@
 .plato-card {
   padding: $padding;
-  background-color: darken($beige, 15);
+  background-color: darken($beige, 2.5);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -18,13 +18,13 @@
 
     .precio-plato {
       position: absolute;
-      background-color: antiquewhite;
+      background-color: $rojo;
       padding: $padding;
       border-radius: 4px;
       bottom: $margin;
       left: $margin;
       font-weight: bold;
-      color: $marronOscuro;
+      color: $blanco;
     }
   }
 
@@ -40,7 +40,7 @@
 
     .descripcion-plato {
       text-align: justify;
-      color: $marronOscuro;
+      color: $negro;
       line-height: 1.6;
     }
   }
@@ -72,7 +72,7 @@
         cursor: pointer;
         background-color: $rojo;
         border: none;
-        color: $beige;
+        color: $blanco;
         letter-spacing: 0.1rem;
         font-weight: bold;
       }
@@ -93,12 +93,12 @@
     text-align: end;
     margin: 0 $margin;
     background-color: $blanco;
-    color: $marronOscuro;
+    color: $negro;
   }
 
   .boton {
     background-color: $marronClaro;
-    color: $beige;
+    color: $blanco;
     font-size: $secondSize;
 
     &:hover {

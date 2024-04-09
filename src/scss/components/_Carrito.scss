@@ -6,7 +6,7 @@
   height: $buttonHeight;
   border: none;
   background: none;
-  color: $beige;
+  color: $blanco;
   font-size: calc($mainSize / 1.6);
   display: flex;
   justify-content: center;
@@ -15,8 +15,6 @@
   &.is-active {
     z-index: 2;
     position: fixed;
-    background-color: $amarillo;
-    color: $marronOscuro;
   }
 
   &:hover {
@@ -47,7 +45,7 @@
     align-items: center;
 
     .mensaje-vacio {
-      color: $marronOscuro;
+      color: $negro;
       z-index: 1;
       font-size: calc($secondSize / 1.6);
     }
@@ -78,7 +76,7 @@
 }
 
 .container-total {
-  background-color: $marronOscuro;
+  background-color: $marronClaro;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -92,7 +90,7 @@
   p {
     font-weight: bold;
     font-size: calc($mainSize / 1.6);
-    color: $beige;
+    color: $blanco;
   }
 }
 

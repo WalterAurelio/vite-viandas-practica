@@ -10,6 +10,7 @@
     position: absolute;
     right: 100%;
     top: $buttonHeight;
+    color: $negro;
     width: 100%;
     transition: $transitionTime;
     z-index: 1;
@@ -27,7 +28,7 @@
     position: relative;
     top: -$margin;
     background: none;
-    color: $beige;
+    color: $blanco;
     font-size: calc($mainSize / 1.6);
     display: flex;
     justify-content: center;

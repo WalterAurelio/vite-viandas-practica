@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoHomeOutline, IoFastFood } from "react-icons/io5";
 import { BiCategory } from "react-icons/bi";
 import { TbDiscount2 } from "react-icons/tb";
 import { IoIosContact } from "react-icons/io";
+import { DarkModeContext } from "../contexts/DarkModeContext";
 
 function HamburgerMenu() {
   const [isActive, setIsActive] = useState(false);
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   return (
     <>
@@ -37,8 +39,18 @@ function HamburgerMenu() {
         </a>
 
         <div className="container-barbecue">
-          {/* <p>VK</p> */}
-          <IoFastFood />
+          <IoFastFood className="logo" />
+          <p>VK</p>
+        </div>
+
+        <div className="container-darkmode">
+          <button
+            type="button"
+            className="boton-darkmode"
+            onClick={() => { setDarkMode(!darkMode) }}
+          >
+            Activar Modo Oscuro
+          </button>
         </div>
 
         <div className="hamburger-footer">

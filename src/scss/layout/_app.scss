@@ -1,6 +1,6 @@
 .main {
   padding: $padding 0;
-  background-color: $beige;
+  background-color: darken($beige, 10);
   min-height: 100vh;
   position: relative;
 
@@ -19,5 +19,13 @@
     .icono {
       color: white;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
+}
+
+.aux-cont2 {
+  height: 2rem;
 }

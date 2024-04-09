@@ -1,0 +1,32 @@
+.boton-scroll {
+  position: fixed;
+  bottom: calc(3.6rem + $margin * 2);
+  right: $margin;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px $marronClaro;
+  background-color: $blanco;
+  transition: $transitionTime;
+
+  &.oculto {
+    right: -3.6rem;
+  }
+
+  .icono-scroll {
+    color: $marronClaro;    
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $marronClaro;
+    border: none;
+
+    .icono-scroll {
+      color: $blanco;
+    }
+  }
+}
