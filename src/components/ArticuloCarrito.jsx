@@ -9,10 +9,10 @@ let ARPesos = new Intl.NumberFormat('en-US', {
 
 function ArticuloCarrito({ articulo }) {
   const { eliminarDeCarrito } = useContext(CarritoContext);
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkClass } = useContext(DarkModeContext);
 
   return (
-    <div className={`articulo-carrito ${darkMode ? 'oscuro' : ''}`.trimEnd()}>
+    <div className={`articulo-carrito ${darkClass}`}>
       <img className="image" src={articulo.image} alt="img_compra" />
       <div className="info-pedido">
         <p className="nombre-pedido"><b>{articulo.name}</b></p>

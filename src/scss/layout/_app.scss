@@ -1,8 +1,32 @@
 .main {
-  padding: $padding 0;
+  padding: 0 0 $padding;
   background-color: darken($beige, 10);
   min-height: 100vh;
   position: relative;
+
+  .container-titulo {
+    padding: 0 $padding;
+    margin-bottom: $margin;
+  }
+
+  .titulo-menu,
+  .titulo-promos {
+    max-width: 112rem;
+    margin: 0 auto;
+    padding-top: $padding;
+    font-family: $fuenteLogo;
+    font-size: $secondSize;
+    color: $marronClaro;
+    border-bottom: solid 1px;
+
+    &.oscuro {
+      color: $blanco;
+    }
+
+    @include desktop {
+      font-size: calc($secondSize * 1.6);
+    }
+  }
 
   .red-social.wp {
     position: fixed;
@@ -27,5 +51,22 @@
 
   &.oscuro {
     background-color: $marronOscuroDM;
+  }
+
+  .main-darkmode {
+    position: fixed;
+    bottom: calc(3.6rem * 2 + $margin * 3);
+    right: $margin;
+    transition: $transitionTime;
+
+    &.moverse {
+      bottom: calc(3.6rem + $margin * 2);
+    }
+  }
+}
+
+@media (max-width: $desktop) {
+  .main-darkmode {
+    display: none;
   }
 }

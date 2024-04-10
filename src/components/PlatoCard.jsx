@@ -11,7 +11,7 @@ let ARPesos = new Intl.NumberFormat('en-US', {
 function PlatoCard({ plato }) {
   const [cantidad, setCantidad] = useState(1);
   const { agregarACarrito } = useContext(CarritoContext);
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkClass } = useContext(DarkModeContext);
   const entrada = useContext(EntradaContext);
   let isHidden = !(entrada.every(item => {
     return plato.name.toLowerCase().includes(item) || plato.description.toLowerCase().includes(item);
@@ -25,7 +25,7 @@ function PlatoCard({ plato }) {
 
   return (
     !isHidden &&
-    <article className={`plato-card ${darkMode ? 'oscuro' : ''}`.trimEnd()}>
+    <article className={`plato-card ${darkClass}`}>
 
       <div className="container-img">
         <img className="img-plato" src={plato.image} alt="img_plato" />

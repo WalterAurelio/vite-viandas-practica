@@ -5,10 +5,11 @@ import { TbDiscount2 } from "react-icons/tb";
 import { IoIosContact } from "react-icons/io";
 import { DarkModeContext } from "../contexts/DarkModeContext";
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
+import BotonDarkMode from "./BotonDarkMode";
 
 function HamburgerMenu() {
   const [isActive, setIsActive] = useState(false);
-  const { darkMode, setDarkMode } = useContext(DarkModeContext);
+  const { darkClass } = useContext(DarkModeContext);
 
   return (
     <>
@@ -18,7 +19,7 @@ function HamburgerMenu() {
       >
         <div className="bar"></div>
       </button>
-      <nav className={`navbar-mobile ${isActive ? 'is-active' : ''} ${darkMode ? 'oscuro' : ''}`.trimEnd()}>
+      <nav className={`navbar-mobile ${isActive ? 'is-active' : ''} ${darkClass}`}>
         <div className="container-bg">
         </div>
 
@@ -44,15 +45,8 @@ function HamburgerMenu() {
           <p>VK</p>
         </div>
 
-        <div className={`container-darkmode ${darkMode ? 'oscuro' : ''}`}>
-          <button
-            type="button"
-            className="boton-darkmode"
-            onClick={() => { setDarkMode(!darkMode) }}
-          >
-            <MdOutlineDarkMode className="desactivado" />
-            <MdDarkMode className="activado" />
-          </button>
+        <div className="container-darkmode">
+          <BotonDarkMode />
         </div>
 
         <div className="hamburger-footer">

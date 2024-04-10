@@ -1,0 +1,44 @@
+.container-presentacion {
+  background-image: url('/src/assets/bg_presentacion.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .nombre-descripcion {
+    background-color: rgba(0 0 0 / 70%);
+    padding: $padding;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include telefono {
+      padding: $padding calc($padding * 2);
+    }
+
+    h2, p {
+      color: $blanco;
+      max-width: 112rem;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: $fuenteLogo;
+      font-size: $mainSize;
+      text-align: start;
+
+      @include tablet {
+        font-size: calc($mainSize * 1.6);
+      }
+    }
+
+    p {
+      line-height: $lineHeight;
+      margin-top: $margin;
+      text-align: justify;
+
+      @include tablet {
+        font-size: calc($secondSize / 1.6);
+      }
+    }
+  } 
+}

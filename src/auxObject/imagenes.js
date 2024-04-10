@@ -1,9 +1,5 @@
-import img1 from '../assets/202301.jpg';
-import img2 from '../assets/202302.jpg';
-import img3 from '../assets/202303.jpg';
+import image_01 from '../assets/carousel_01.jpg';
+import image_02 from '../assets/carousel_02.jpg';
+import image_03 from '../assets/carousel_03.jpg';
 
-export const imagenes = [
-  img1,
-  img2,
-  img3
-]
+export const imagenes = [image_01, image_02, image_03];

@@ -1,0 +1,48 @@
+.boton-darkmode {
+  cursor: pointer;
+  border: none;
+  position: relative;
+  height: 3.6rem;
+  width: 3.6rem;
+  border-radius: 50%;
+  border: solid 2px $marronClaro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $blanco;
+
+  .desactivado {
+    font-size: calc($mainSize / 1.6);
+    color: $blanco;
+    opacity: 0;
+  }
+
+  .activado {
+    position: absolute;
+    font-size: calc($mainSize / 1.6);
+    color: $marronClaro;
+  }
+
+  &.oscuro, &:hover {
+    border-color: $blanco;
+    background-color: $marronClaro;
+
+    .desactivado {
+      opacity: unset;
+    }
+
+    .activado {
+      opacity: 0;
+    }
+  }
+
+  &.oscuro:hover {
+    border-color: $marronClaro;
+    background-color: $blanco;
+
+    .activado {
+      color: $marronClaro;
+      opacity: unset;
+    }
+  }
+}

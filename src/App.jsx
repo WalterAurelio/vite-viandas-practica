@@ -13,6 +13,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { IoFastFood } from "react-icons/io5";
 import BotonScrollTo from './components/BotonScrollTo';
 import { DarkModeContext } from './contexts/DarkModeContext';
+import BotonDarkMode from './components/BotonDarkMode';
 
 let listaPlatos = platosJson.platos;
 
@@ -22,6 +23,7 @@ function App() {
   const [isVisible, setIsVisible] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
   const ref = useRef(null);
+  const darkClass = darkMode ? 'oscuro' : ''.trimEnd();
 
   const observer = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) {
@@ -53,12 +55,12 @@ function App() {
   }
 
   return (
-    <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
+    <DarkModeContext.Provider value={{ darkMode, setDarkMode, darkClass }}>
       <CarritoContext.Provider value={{ agregarACarrito, eliminarDeCarrito }}>
         <EntradaContext.Provider value={entrada}>
 
-          <div ref={ref} className={`container-aux ${darkMode ? 'oscuro' : ''}`.trimEnd()}></div>
-          <header className={`header ${darkMode ? 'oscuro' : ''}`.trimEnd()}>
+          <div ref={ref} className={`container-aux ${darkClass}`}></div>
+          <header className={`header ${darkClass}`}>
             <div className='container-header'>
               <div className={`container-logo ${isVisible ? '' : 'is-scrolled'}`.trimEnd()}>
                 <IoFastFood className='logo' />
@@ -82,17 +84,46 @@ function App() {
             </div>
           </header>
 
-          <main className={`main ${darkMode ? 'oscuro' : ''}`.trimEnd()}>
-            {/* <ImageCarousel /> */}
+          <section className='container-presentacion'>
+            <div className='nombre-descripcion'>
+              <h2>Viandas Viking</h2>
+              <p>
+                Disfruta de sabores auténticos y creativos en un
+                ambiente acogedor. Desde pizzas gourmet hasta opciones de carne y ensaladas frescas,
+                cada plato está preparado con cuidado para deleitar tu paladar. ¡Vení y descubrí el
+                placer de comer en Viandas Viking!
+              </p>
+            </div>
+          </section>
+
+          <main className={`main ${darkClass}`}>
+
+            {/* <div className='container-titulo promos'>
+              <h2 className={`titulo-promos ${darkClass}`}>Galería</h2>
+            </div> */}
+
+            <div className='container-titulo menu'>
+              <h2 className={`titulo-menu ${darkClass}`}>Menú</h2>
+            </div>
+
             <ListaPlatos listaPlatos={listaPlatos} />
+
+            <ImageCarousel />
+
+            <ListaPlatos listaPlatos={listaPlatos} />
+
             <div className='red-social wp'>
               <BsWhatsapp className='icono' />
             </div>
 
             <BotonScrollTo elemento={ref.current} isVisible={isVisible} />
+
+            <div className={`main-darkmode ${isVisible ? 'moverse' : ''}`.trimEnd()}>
+              <BotonDarkMode />
+            </div>
           </main>
 
-          <section className={`container-infocontacto ${darkMode ? 'oscuro' : ''}`.trimEnd()}>
+          <section className={`container-infocontacto ${darkClass}`}>
             <div className='info-delivery'>
               <p>Pedidos al <b>+5411-6518-2730</b>.</p>
               <p>Delivery días sábados. Costo de envío <b>$1000</b>.</p>
@@ -136,7 +167,7 @@ function App() {
             </div>
           </section>
 
-          <footer className={`container-footer ${darkMode ? 'oscuro' : ''}`.trimEnd()}>
+          <footer className={`container-footer ${darkClass}`}>
             <p><b>VK®2024</b> Todos los derechos reservados.</p>
           </footer>
 

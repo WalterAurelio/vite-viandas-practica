@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { imagenes } from "../auxObject/imagenes";
 import Imagen from "./Imagen";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 function ImageCarousel() {
   const [indexActual, setIndexActual] = useState(0);
@@ -9,7 +10,7 @@ function ImageCarousel() {
     const timeoutId = setTimeout(() => {
       const value = (indexActual + 1) % imagenes.length;
       setIndexActual(value);
-    }, 2000);
+    }, 6000);
 
     return () => {
       clearTimeout(timeoutId);
@@ -41,7 +42,7 @@ function ImageCarousel() {
             setIndexActual(value);
           }}
         >
-          {'<'}
+          <IoIosArrowBack className="icono-izquierda" />
         </button>
       </div>
 
@@ -54,7 +55,7 @@ function ImageCarousel() {
             setIndexActual(value);
           }}
         >
-          {'>'}
+          <IoIosArrowForward className="icono-derecha" />
         </button>
       </div>
 

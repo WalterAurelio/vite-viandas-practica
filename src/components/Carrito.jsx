@@ -10,7 +10,7 @@ let ARPesos = new Intl.NumberFormat('en-US', {
 
 function Carrito({ listaCarrito }) {
   const [isActive, setIsActive] = useState(false);
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkClass } = useContext(DarkModeContext);
   const carritoVacio = listaCarrito.length < 1;
   let precioTotal = 0;
 
@@ -23,14 +23,14 @@ function Carrito({ listaCarrito }) {
       <div className="container-boton-carrito"> {/* Auxiliar iPad */}
         <button
           type="button"
-          className={`boton-carrito ${isActive ? 'is-active' : ''} ${darkMode ? 'oscuro' : ''}`.trimEnd()}
+          className={`boton-carrito ${isActive ? 'is-active' : ''} ${darkClass}`}
           onClick={() => { setIsActive(!isActive) }}
         >
           <FiShoppingCart className="icono" />
         </button>
       </div>
       <div
-        className={`carrito ${isActive ? 'is-active' : ''} ${carritoVacio ? 'vacio' : ''} ${darkMode ? 'oscuro' : ''}`.trimEnd()}
+        className={`carrito ${isActive ? 'is-active' : ''} ${carritoVacio ? 'vacio' : ''} ${darkClass}`}
       >
         <div className="container-bg"></div>
         {
