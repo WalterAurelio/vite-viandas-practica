@@ -11,9 +11,15 @@
     position: relative;
     margin-bottom: $margin;
 
+    width: 100%;          // Código para mantener
+    padding-bottom: 100%; // el aspect ratio 1:1
+
     .img-plato {
+      position: absolute;
       width: 100%;
+      height: 100%;
       border-radius: 4px;
+      object-fit: cover;
     }
 
     .precio-plato {

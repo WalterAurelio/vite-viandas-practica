@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { imagenes } from "../auxObject/imagenes";
 import Imagen from "./Imagen";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-function ImageCarousel() {
+function ImageCarousel({ imagenes }) {
   const [indexActual, setIndexActual] = useState(0);
 
   useEffect(() => {

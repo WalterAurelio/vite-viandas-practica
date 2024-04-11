@@ -14,6 +14,7 @@ import { IoFastFood } from "react-icons/io5";
 import BotonScrollTo from './components/BotonScrollTo';
 import { DarkModeContext } from './contexts/DarkModeContext';
 import BotonDarkMode from './components/BotonDarkMode';
+import { imagenesMenu, imagenesPostres } from "./auxObject/imagenes";
 
 let listaPlatos = platosJson.platos;
 
@@ -98,19 +99,20 @@ function App() {
 
           <main className={`main ${darkClass}`}>
 
-            {/* <div className='container-titulo promos'>
-              <h2 className={`titulo-promos ${darkClass}`}>Galería</h2>
-            </div> */}
-
             <div className='container-titulo menu'>
               <h2 className={`titulo-menu ${darkClass}`}>Menú</h2>
             </div>
 
-            <ListaPlatos listaPlatos={listaPlatos} />
-
-            <ImageCarousel />
+            <ImageCarousel imagenes={imagenesMenu} />
 
             <ListaPlatos listaPlatos={listaPlatos} />
+
+            <div className='container-titulo promos'>
+              <h2 className={`titulo-promos ${darkClass}`}>Postres</h2>
+            </div>
+
+            <ImageCarousel imagenes={imagenesPostres} />
+
 
             <div className='red-social wp'>
               <BsWhatsapp className='icono' />
