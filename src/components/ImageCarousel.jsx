@@ -4,11 +4,13 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 function ImageCarousel({ imagenes }) {
   const [indexActual, setIndexActual] = useState(0);
+  const [sentido, setSentido] = useState('derecha');
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       const value = (indexActual + 1) % imagenes.length;
       setIndexActual(value);
+      setSentido('derecha');
     }, 6000);
 
     return () => {
@@ -27,6 +29,7 @@ function ImageCarousel({ imagenes }) {
               index={index}
               indexActual={indexActual}
               length={imagenes.length}
+              sentido={sentido}
             />
           )
         }
@@ -39,6 +42,7 @@ function ImageCarousel({ imagenes }) {
           onClick={() => {
             const value = indexActual - 1 === -1 ? imagenes.length - 1 : indexActual - 1;
             setIndexActual(value);
+            setSentido('izquierda');
           }}
         >
           <IoIosArrowBack className="icono-izquierda" />
@@ -52,6 +56,7 @@ function ImageCarousel({ imagenes }) {
           onClick={() => {
             const value = (indexActual + 1) % imagenes.length;
             setIndexActual(value);
+            setSentido('derecha');
           }}
         >
           <IoIosArrowForward className="icono-derecha" />
