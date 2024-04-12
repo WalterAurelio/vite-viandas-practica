@@ -11,10 +11,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
   
   &.is-active {
-    z-index: 2;
     position: fixed;
+    z-index: 3;
   }
 
   &:hover {
@@ -26,7 +27,6 @@
 
 .carrito {
   position: fixed;
-  z-index: 1;
   top: 0;
   left: 100%;
   width: 100%;
@@ -37,6 +37,7 @@
 
   &.is-active {
     left: 0;
+    z-index: 2;
   }
 
   &.vacio {
@@ -47,7 +48,6 @@
     .mensaje-vacio {
       color: $negro;
       z-index: 1;
-      font-size: calc($secondSize / 1.6);
     }
 
     .container-total {

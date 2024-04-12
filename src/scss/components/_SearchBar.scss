@@ -13,7 +13,6 @@
     color: $negro;
     width: 100%;
     transition: $transitionTime;
-    z-index: 1;
 
     &.is-active {
       right: 0;
@@ -22,7 +21,6 @@
 
   .boton {
     border: none;
-    z-index: 1;
     width: $buttonHeight;
     height: $buttonHeight;
     position: relative;

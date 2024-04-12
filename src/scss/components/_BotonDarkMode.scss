@@ -24,7 +24,6 @@
   }
 
   &.oscuro, &:hover {
-    border-color: $blanco;
     background-color: $marronClaro;
 
     .desactivado {
@@ -36,8 +35,11 @@
     }
   }
 
+  &.oscuro {
+    border-color: $blanco;
+  }
+
   &.oscuro:hover {
-    border-color: $marronClaro;
     background-color: $blanco;
 
     .activado {

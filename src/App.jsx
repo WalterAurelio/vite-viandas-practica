@@ -15,8 +15,12 @@ import BotonScrollTo from './components/BotonScrollTo';
 import { DarkModeContext } from './contexts/DarkModeContext';
 import BotonDarkMode from './components/BotonDarkMode';
 import { imagenesMenu, imagenesPostres } from "./auxObject/imagenes";
+import promo_01 from './assets/promo_01.png';
+import promo_02 from './assets/promo_02.png';
+import promo_03 from './assets/promo_03.png';
 
 let listaPlatos = platosJson.platos;
+let listaPostres = platosJson.postres;
 
 function App() {
   const [listaCarrito, setListaCarrito] = useState([]);
@@ -102,17 +106,26 @@ function App() {
             <div className='container-titulo menu'>
               <h2 className={`titulo-menu ${darkClass}`}>Menú</h2>
             </div>
-
             <ImageCarousel imagenes={imagenesMenu} />
-
             <ListaPlatos listaPlatos={listaPlatos} />
 
             <div className='container-titulo promos'>
               <h2 className={`titulo-promos ${darkClass}`}>Postres</h2>
             </div>
-
             <ImageCarousel imagenes={imagenesPostres} />
+            <ListaPlatos listaPlatos={listaPostres} />
 
+            <div className='container-titulo promos'>
+              <h2 className={`titulo-promos ${darkClass}`}>Promos</h2>
+            </div>
+            <div className='container-promos'>
+              <div className='promo'>
+                <img src={promo_01} alt='promo_img' />
+              </div>
+              <div className='promo'>
+                <img src={promo_03} alt='promo_img' />
+              </div>
+            </div>
 
             <div className='red-social wp'>
               <BsWhatsapp className='icono' />

@@ -30,7 +30,7 @@
   }
 
   &:nth-child(even) {
-    background-color: darken($beige, 10);
+    background-color: $beigeOscuro;
   }
 
   .boton-eliminar {
