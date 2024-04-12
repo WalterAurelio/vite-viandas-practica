@@ -14,7 +14,6 @@
   .desactivado {
     font-size: calc($mainSize / 1.6);
     color: $blanco;
-    opacity: 0;
   }
 
   .activado {
@@ -23,28 +22,28 @@
     color: $marronClaro;
   }
 
-  &.oscuro, &:hover {
+  &:hover {
     background-color: $marronClaro;
 
-    .desactivado {
-      opacity: unset;
-    }
-
     .activado {
-      opacity: 0;
+      color: $blanco;
     }
   }
 
   &.oscuro {
     border-color: $blanco;
-  }
-
-  &.oscuro:hover {
-    background-color: $blanco;
+    background-color: $marronClaro;
 
     .activado {
-      color: $marronClaro;
-      opacity: unset;
+      opacity: 0;
+    }
+
+    &:hover {
+      background-color: $blanco;
+
+      .desactivado {
+        color: $marronClaro;
+      }
     }
   }
 }

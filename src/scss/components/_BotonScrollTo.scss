@@ -10,23 +10,40 @@
   justify-content: center;
   border: solid 2px $marronClaro;
   background-color: $blanco;
-  transition: $transitionTime;
-
-  &.oculto {
-    right: -3.6rem;
-  }
+  transition: $transitionTime right;
 
   .icono-scroll {
-    color: $marronClaro;    
+    color: $marronClaro;
+  }
+  
+  &.oculto {
+    right: -3.6rem;
   }
 
   &:hover {
     cursor: pointer;
     background-color: $marronClaro;
-    border: none;
+    
+    .icono-scroll {
+      color: $blanco;
+    }
+  }
+
+
+  &.oscuro {
+    background-color: $marronClaro;
+    border-color: $blanco;
 
     .icono-scroll {
       color: $blanco;
+    }
+
+    &:hover {
+      background-color: $blanco;
+
+      .icono-scroll {
+        color: $marronClaro;
+      }
     }
   }
 }

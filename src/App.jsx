@@ -15,9 +15,8 @@ import BotonScrollTo from './components/BotonScrollTo';
 import { DarkModeContext } from './contexts/DarkModeContext';
 import BotonDarkMode from './components/BotonDarkMode';
 import { imagenesMenu, imagenesPostres } from "./auxObject/imagenes";
-import promo_01 from './assets/promo_01.png';
-import promo_02 from './assets/promo_02.png';
-import promo_03 from './assets/promo_03.png';
+import promo_01 from './assets/webp/promo_01.webp';
+import promo_03 from './assets/webp/promo_03.webp';
 
 let listaPlatos = platosJson.platos;
 let listaPostres = platosJson.postres;
@@ -28,7 +27,7 @@ function App() {
   const [isVisible, setIsVisible] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
   const ref = useRef(null);
-  const darkClass = darkMode ? 'oscuro' : ''.trimEnd();
+  const darkClass = darkMode ? 'oscuro' : '';
 
   const observer = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) {
