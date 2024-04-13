@@ -1,25 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Imagen from "./Imagen";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 function ImageCarousel({ imagenes }) {
   const [indexActual, setIndexActual] = useState(0);
   const [sentido, setSentido] = useState('derecha');
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  });
 
   useEffect(() => {
+    observer.observe(ref.current);
     const timeoutId = setTimeout(() => {
-      const value = (indexActual + 1) % imagenes.length;
-      setIndexActual(value);
-      setSentido('derecha');
+      if (isVisible) {
+        const value = (indexActual + 1) % imagenes.length;
+        setIndexActual(value);
+        setSentido('derecha');
+      }
     }, 6000);
 
     return () => {
       clearTimeout(timeoutId);
     }
-  }, [indexActual]);
+  }, [indexActual, isVisible]);
 
   return (
-    <div className='container-carousel'>
+    <div ref={ref} className='container-carousel'>
       <div className='container-imagenes'>
         {
           imagenes.map((image, index) =>

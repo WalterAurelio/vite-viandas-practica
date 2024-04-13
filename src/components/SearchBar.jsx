@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { BsSearch } from "react-icons/bs";
 
 function SearchBar({ filtrarPlatos }) {
   const [isActive, setIsActive] = useState(false);
+  const ref = useRef(null);
 
   return (
     <div className="container-searchbar">
       <input
+        ref={ref}
         className={`input ${isActive ? 'is-active' : ''}`.trimEnd()}
         type='search'
         placeholder='Buscar productos'
@@ -19,7 +21,10 @@ function SearchBar({ filtrarPlatos }) {
       <button
         className={`boton ${isActive ? 'is-active' : ''}`.trimEnd()}
         type='button'
-        onClick={() => { setIsActive(!isActive) }}
+        onClick={() => {
+          setIsActive(!isActive);
+          ref.current.focus();
+        }}
       >
         <BsSearch className="icono" />
       </button>

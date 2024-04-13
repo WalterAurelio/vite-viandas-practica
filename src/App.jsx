@@ -3,7 +3,8 @@ import SearchBar from './components/SearchBar';
 import ImageCarousel from './components/ImageCarousel';
 import Carrito from './components/Carrito';
 import ListaPlatos from './components/ListaPlatos';
-import platosJson from "./auxObject/platos.json";
+import { platos } from './auxObject/platos';
+import { postres } from './auxObject/postres';
 import { CarritoContext } from './contexts/CarritoContext';
 import { EntradaContext } from './contexts/EntradaContext';
 import { v4 as uuidv4 } from 'uuid';
@@ -17,9 +18,6 @@ import BotonDarkMode from './components/BotonDarkMode';
 import { imagenesMenu, imagenesPostres } from "./auxObject/imagenes";
 import promo_01 from './assets/webp/promo_01.webp';
 import promo_03 from './assets/webp/promo_03.webp';
-
-let listaPlatos = platosJson.platos;
-let listaPostres = platosJson.postres;
 
 function App() {
   const [listaCarrito, setListaCarrito] = useState([]);
@@ -106,13 +104,13 @@ function App() {
               <h2 className={`titulo-menu ${darkClass}`}>Menú</h2>
             </div>
             <ImageCarousel imagenes={imagenesMenu} />
-            <ListaPlatos listaPlatos={listaPlatos} />
+            <ListaPlatos listaPlatos={platos} />
 
             <div className='container-titulo promos'>
               <h2 className={`titulo-promos ${darkClass}`}>Postres</h2>
             </div>
-            <ImageCarousel imagenes={imagenesPostres} />
-            <ListaPlatos listaPlatos={listaPostres} />
+            {/* <ImageCarousel imagenes={imagenesPostres} /> */}
+            <ListaPlatos listaPlatos={postres} />
 
             <div className='container-titulo promos'>
               <h2 className={`titulo-promos ${darkClass}`}>Promos</h2>

@@ -5,6 +5,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &.oscuro {
+    color: $blanco;
+  }
 }
 
 .container-cards {
