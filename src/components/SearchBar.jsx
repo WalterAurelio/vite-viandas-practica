@@ -1,9 +1,11 @@
 import React, { useState, useRef } from "react";
 import { BsSearch } from "react-icons/bs";
+import { useEntradaStore } from "../store/entradaStore";
 
-function SearchBar({ filtrarPlatos }) {
+function SearchBar() {
   const [isActive, setIsActive] = useState(false);
   const ref = useRef(null);
+  const { setEntrada } = useEntradaStore();
 
   return (
     <div className="container-searchbar">
@@ -15,7 +17,7 @@ function SearchBar({ filtrarPlatos }) {
         id='search'
         name='search'
         onChange={(e) => {
-          filtrarPlatos(e.target.value.toLowerCase().split(' '));
+          setEntrada(e.target.value.toLowerCase().split(' '));
         }}
       />
       <button

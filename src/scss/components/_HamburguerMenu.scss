@@ -7,20 +7,57 @@
   padding: $padding;
   background: none;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container-iconos {
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    .icono-burger {
+      font-size: $mainSize;
+      color: $blanco;
+      transition: calc($transitionTime / 1.6) opacity;
+    }
+
+    .icono-close {
+      position: absolute;
+      font-size: $mainSize;
+      color: $blanco;
+      transition: calc($transitionTime / 1.6) opacity;
+      opacity: 0;
+    }
+  }
 
   &.is-active {
     z-index: 3;
+
+    .icono-burger {
+      opacity: 0;
+    }
+
+    .icono-close {
+      opacity: unset;
+    }
   }
 
   &:hover {
     background-color: $amarillo;
+
+    .icono-burger,
+    .icono-close {
+      color: $marronClaro;
+    }
     
-    .bar, &::before, &::after {
+    /* .bar, &::before, &::after {
       background-color: $marronOscuro;
-    }  
+    } */
   }
 
-  .bar, &::before, &::after {
+  /* .bar, &::before, &::after {
     content: '';
     display: block;
     width: 100%;
@@ -43,7 +80,7 @@
 
   &.is-active::after {
 
-  }
+  } */
 }
 
 .navbar-mobile {

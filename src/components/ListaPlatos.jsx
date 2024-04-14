@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import PlatoCard from "./PlatoCard";
-import { EntradaContext } from "../contexts/EntradaContext";
 import { DarkModeContext } from "../contexts/DarkModeContext";
+import { useEntradaStore } from "../store/entradaStore";
 
 function ListaPlatos({ listaPlatos }) {
-  const entrada = useContext(EntradaContext);
+  const entrada = useEntradaStore(state => state.entrada);
   const { darkClass } = useContext(DarkModeContext);
   const sinResultados = listaPlatos.every(plato =>
     !plato.name.toLowerCase().includes(entrada) && !plato.description.toLowerCase().includes(entrada)

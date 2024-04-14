@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContext";
-import { EntradaContext } from "../contexts/EntradaContext";
 import { DarkModeContext } from "../contexts/DarkModeContext";
+import { useEntradaStore } from "../store/entradaStore";
 
 let ARPesos = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -12,7 +12,7 @@ function PlatoCard({ plato }) {
   const [cantidad, setCantidad] = useState(1);
   const { agregarACarrito } = useContext(CarritoContext);
   const { darkClass } = useContext(DarkModeContext);
-  const entrada = useContext(EntradaContext);
+  const entrada = useEntradaStore(state => state.entrada);
   let isHidden = !(entrada.every(item => {
     return plato.name.toLowerCase().includes(item) || plato.description.toLowerCase().includes(item);
   }));

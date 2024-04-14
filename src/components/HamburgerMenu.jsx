@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
-import { IoHomeOutline, IoFastFood } from "react-icons/io5";
+import { IoHomeOutline, IoFastFood, IoCloseOutline } from "react-icons/io5";
 import { BiCategory } from "react-icons/bi";
 import { TbDiscount2 } from "react-icons/tb";
 import { IoIosContact } from "react-icons/io";
 import { DarkModeContext } from "../contexts/DarkModeContext";
-import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
+import { RxHamburgerMenu } from "react-icons/rx";
+
 import BotonDarkMode from "./BotonDarkMode";
 
 function HamburgerMenu() {
@@ -17,7 +18,11 @@ function HamburgerMenu() {
         className={`hamburger ${isActive ? 'is-active' : ''}`.trimEnd()}
         onClick={() => { setIsActive(!isActive) }}
       >
-        <div className="bar"></div>
+        {/* <div className="bar"></div> */}
+        <div className="container-iconos">
+          <RxHamburgerMenu className="icono-burger" />
+          <IoCloseOutline className="icono-close" />
+        </div>
       </button>
       <nav className={`navbar-mobile ${isActive ? 'is-active' : ''} ${darkClass}`}>
         <div className="container-bg">
